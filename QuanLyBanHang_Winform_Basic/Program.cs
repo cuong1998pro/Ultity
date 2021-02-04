@@ -16,7 +16,7 @@ namespace QuanLyBanHang_Winform_Basic
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmHoaDonBanHang());
+            Application.Run(new frmMain());
         }
     }
 }

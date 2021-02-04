@@ -46,12 +46,12 @@ namespace QuanLyBanHang_Winform_Basic
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.btnDong = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnHuyHoaDon = new System.Windows.Forms.Button();
             this.nmrDonGia = new System.Windows.Forms.NumericUpDown();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
+            this.btnInHoaDon = new System.Windows.Forms.Button();
+            this.btnLuuHoaDon = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.nmrSoLuong = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
             this.nmrThanhTien = new System.Windows.Forms.NumericUpDown();
             this.btnThem = new System.Windows.Forms.Button();
@@ -63,6 +63,7 @@ namespace QuanLyBanHang_Winform_Basic
             this.cboMaHang = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboMaKhach = new System.Windows.Forms.ComboBox();
             this.cboMaNhanVien = new System.Windows.Forms.ComboBox();
             this.dpkNgayBan = new System.Windows.Forms.DateTimePicker();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
@@ -82,14 +83,13 @@ namespace QuanLyBanHang_Winform_Basic
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.cboMaHoaDon = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.cboMaKhach = new System.Windows.Forms.ComboBox();
+            this.cboMaHoaDonTimKiem = new System.Windows.Forms.ComboBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrDonGia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrThanhTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrGiamGia)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -116,6 +116,7 @@ namespace QuanLyBanHang_Winform_Basic
             this.Column3,
             this.Column6,
             this.Column7});
+            this.dgvChiTietHoaDon.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvChiTietHoaDon.Location = new System.Drawing.Point(16, 92);
             this.dgvChiTietHoaDon.MultiSelect = false;
             this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
@@ -194,12 +195,12 @@ namespace QuanLyBanHang_Winform_Basic
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.btnDong);
-            this.groupBox2.Controls.Add(this.btnXoa);
+            this.groupBox2.Controls.Add(this.btnHuyHoaDon);
             this.groupBox2.Controls.Add(this.nmrDonGia);
-            this.groupBox2.Controls.Add(this.btnLuu);
-            this.groupBox2.Controls.Add(this.btnSua);
+            this.groupBox2.Controls.Add(this.btnInHoaDon);
+            this.groupBox2.Controls.Add(this.btnLuuHoaDon);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.numericUpDown2);
+            this.groupBox2.Controls.Add(this.nmrSoLuong);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.nmrThanhTien);
             this.groupBox2.Controls.Add(this.btnThem);
@@ -275,18 +276,18 @@ namespace QuanLyBanHang_Winform_Basic
             this.btnDong.Text = "&Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
             // 
-            // btnXoa
+            // btnHuyHoaDon
             // 
-            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnXoa.ForeColor = System.Drawing.Color.Blue;
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(181, 325);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(142, 30);
-            this.btnXoa.TabIndex = 1;
-            this.btnXoa.Text = "&Huỷ hoá đơn";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnHuyHoaDon.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnHuyHoaDon.ForeColor = System.Drawing.Color.Blue;
+            this.btnHuyHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnHuyHoaDon.Image")));
+            this.btnHuyHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHuyHoaDon.Location = new System.Drawing.Point(181, 325);
+            this.btnHuyHoaDon.Name = "btnHuyHoaDon";
+            this.btnHuyHoaDon.Size = new System.Drawing.Size(142, 30);
+            this.btnHuyHoaDon.TabIndex = 1;
+            this.btnHuyHoaDon.Text = "&Huỷ hoá đơn";
+            this.btnHuyHoaDon.UseVisualStyleBackColor = true;
             // 
             // nmrDonGia
             // 
@@ -296,31 +297,32 @@ namespace QuanLyBanHang_Winform_Basic
             this.nmrDonGia.TabIndex = 36;
             this.nmrDonGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // btnLuu
+            // btnInHoaDon
             // 
-            this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnLuu.ForeColor = System.Drawing.Color.Blue;
-            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
-            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(499, 325);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(142, 30);
-            this.btnLuu.TabIndex = 3;
-            this.btnLuu.Text = "&In hoá đơn";
-            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnInHoaDon.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnInHoaDon.ForeColor = System.Drawing.Color.Blue;
+            this.btnInHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnInHoaDon.Image")));
+            this.btnInHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInHoaDon.Location = new System.Drawing.Point(499, 325);
+            this.btnInHoaDon.Name = "btnInHoaDon";
+            this.btnInHoaDon.Size = new System.Drawing.Size(142, 30);
+            this.btnInHoaDon.TabIndex = 3;
+            this.btnInHoaDon.Text = "&In hoá đơn";
+            this.btnInHoaDon.UseVisualStyleBackColor = true;
             // 
-            // btnSua
+            // btnLuuHoaDon
             // 
-            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSua.ForeColor = System.Drawing.Color.Blue;
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(340, 325);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(142, 30);
-            this.btnSua.TabIndex = 2;
-            this.btnSua.Text = "&Lưu hoá đơn";
-            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnLuuHoaDon.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnLuuHoaDon.Enabled = false;
+            this.btnLuuHoaDon.ForeColor = System.Drawing.Color.Blue;
+            this.btnLuuHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuHoaDon.Image")));
+            this.btnLuuHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuuHoaDon.Location = new System.Drawing.Point(340, 325);
+            this.btnLuuHoaDon.Name = "btnLuuHoaDon";
+            this.btnLuuHoaDon.Size = new System.Drawing.Size(142, 30);
+            this.btnLuuHoaDon.TabIndex = 2;
+            this.btnLuuHoaDon.Text = "&Lưu hoá đơn";
+            this.btnLuuHoaDon.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -333,13 +335,13 @@ namespace QuanLyBanHang_Winform_Basic
             this.label12.TabIndex = 35;
             this.label12.Text = "Đơn giá";
             // 
-            // numericUpDown2
+            // nmrSoLuong
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(374, 29);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(135, 21);
-            this.numericUpDown2.TabIndex = 34;
-            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nmrSoLuong.Location = new System.Drawing.Point(374, 29);
+            this.nmrSoLuong.Name = "nmrSoLuong";
+            this.nmrSoLuong.Size = new System.Drawing.Size(135, 21);
+            this.nmrSoLuong.TabIndex = 34;
+            this.nmrSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label13
             // 
@@ -468,6 +470,14 @@ namespace QuanLyBanHang_Winform_Basic
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung";
+            // 
+            // cboMaKhach
+            // 
+            this.cboMaKhach.FormattingEnabled = true;
+            this.cboMaKhach.Location = new System.Drawing.Point(519, 25);
+            this.cboMaKhach.Name = "cboMaKhach";
+            this.cboMaKhach.Size = new System.Drawing.Size(186, 23);
+            this.cboMaKhach.TabIndex = 25;
             // 
             // cboMaNhanVien
             // 
@@ -645,8 +655,8 @@ namespace QuanLyBanHang_Winform_Basic
             // panel3
             // 
             this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.cboMaHoaDon);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.cboMaHoaDonTimKiem);
+            this.panel3.Controls.Add(this.btnTimKiem);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 24);
             this.panel3.Name = "panel3";
@@ -664,34 +674,26 @@ namespace QuanLyBanHang_Winform_Basic
             this.label14.TabIndex = 26;
             this.label14.Text = "Mã hoá đơn";
             // 
-            // cboMaHoaDon
+            // cboMaHoaDonTimKiem
             // 
-            this.cboMaHoaDon.FormattingEnabled = true;
-            this.cboMaHoaDon.Location = new System.Drawing.Point(143, 15);
-            this.cboMaHoaDon.Name = "cboMaHoaDon";
-            this.cboMaHoaDon.Size = new System.Drawing.Size(186, 21);
-            this.cboMaHoaDon.TabIndex = 25;
+            this.cboMaHoaDonTimKiem.FormattingEnabled = true;
+            this.cboMaHoaDonTimKiem.Location = new System.Drawing.Point(143, 15);
+            this.cboMaHoaDonTimKiem.Name = "cboMaHoaDonTimKiem";
+            this.cboMaHoaDonTimKiem.Size = new System.Drawing.Size(186, 21);
+            this.cboMaHoaDonTimKiem.TabIndex = 25;
             // 
-            // button1
+            // btnTimKiem
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.ForeColor = System.Drawing.Color.Blue;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(337, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 26);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "&Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // cboMaKhach
-            // 
-            this.cboMaKhach.FormattingEnabled = true;
-            this.cboMaKhach.Location = new System.Drawing.Point(519, 25);
-            this.cboMaKhach.Name = "cboMaKhach";
-            this.cboMaKhach.Size = new System.Drawing.Size(186, 23);
-            this.cboMaKhach.TabIndex = 25;
+            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnTimKiem.ForeColor = System.Drawing.Color.Blue;
+            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
+            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimKiem.Location = new System.Drawing.Point(337, 12);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(125, 26);
+            this.btnTimKiem.TabIndex = 7;
+            this.btnTimKiem.Text = "&Tìm kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
             // 
             // frmHoaDonBanHang
             // 
@@ -701,6 +703,7 @@ namespace QuanLyBanHang_Winform_Basic
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmHoaDonBanHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Hoá đơn bán hàng";
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -708,7 +711,7 @@ namespace QuanLyBanHang_Winform_Basic
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrDonGia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrSoLuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrThanhTien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrGiamGia)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -731,10 +734,10 @@ namespace QuanLyBanHang_Winform_Basic
         private System.Windows.Forms.Label D;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnHuyHoaDon;
         private System.Windows.Forms.Button btnDong;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnLuuHoaDon;
+        private System.Windows.Forms.Button btnInHoaDon;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtDiaChi;
@@ -759,7 +762,7 @@ namespace QuanLyBanHang_Winform_Basic
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.NumericUpDown nmrDonGia;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown nmrSoLuong;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.NumericUpDown nmrThanhTien;
         private System.Windows.Forms.Label label10;
@@ -771,8 +774,8 @@ namespace QuanLyBanHang_Winform_Basic
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox cboMaHoaDon;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cboMaHoaDonTimKiem;
+        private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.ComboBox cboMaKhach;
     }
 }

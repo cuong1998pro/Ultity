@@ -61,6 +61,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\BLL\BChatLieu.cs" />
+    <Compile Include="Classes\BLL\BHang.cs" />
+    <Compile Include="Classes\BLL\BKhachHang.cs" />
+    <Compile Include="Classes\BLL\BNhanVien.cs" />
+    <Compile Include="Classes\DataAccess.cs" />
+    <Compile Include="Classes\DTO\EChatLieu.cs" />
+    <Compile Include="Classes\DTO\EHang.cs" />
+    <Compile Include="Classes\DTO\EKhachHang.cs" />
+    <Compile Include="Classes\DTO\ENhanVien.cs" />
+    <Compile Include="Classes\Functions.cs" />
     <Compile Include="frmDanhMucChatLieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +107,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTimKiemHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTimKiemHoaDon.Designer.cs">
+      <DependentUpon>frmTimKiemHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmDanhMucChatLieu.resx">
@@ -116,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTimKiemHoaDon.resx">
+      <DependentUpon>frmTimKiemHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -151,5 +170,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
