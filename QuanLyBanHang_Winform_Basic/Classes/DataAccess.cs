@@ -154,6 +154,28 @@ namespace QuanLyBanHang_Winform_Basic.Classes
             }).ToList();
         }
 
+        public static T ConvertToObject<T>(DataTable dt)
+        {
+            var columnNames = dt.Columns.Cast<DataColumn>()
+                    .Select(c => c.ColumnName)
+                    .ToList();
+            var properties = typeof(T).GetProperties();
+            var list = dt.AsEnumerable().Select(row =>
+           {
+               var objT = Activator.CreateInstance<T>();
+               foreach (var pro in properties)
+               {
+                   if (columnNames.Contains(pro.Name))
+                   {
+                       PropertyInfo pI = objT.GetType().GetProperty(pro.Name);
+                       pro.SetValue(objT, row[pro.Name] == DBNull.Value ? null : Convert.ChangeType(row[pro.Name], pI.PropertyType));
+                   }
+               }
+               return objT;
+           }).ToList();
+            return list.First();
+        }
+
         private static List<T> ConvertDataTable<T>(DataTable dt)
         {
             List<T> data = new List<T>();
