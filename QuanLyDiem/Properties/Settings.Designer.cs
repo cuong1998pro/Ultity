@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QuanLyBanHang_Winform_Basic.Properties {
+namespace QuanLyDiem.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -25,22 +25,11 @@ namespace QuanLyBanHang_Winform_Basic.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\sqlexpress;Initial Catalog=C:\\REPOS\\ULTITY\\QUANLYBANHANG_WINFORM_BA" +
-            "SIC\\QUANLYBANHANG.MDF;Integrated Security=True")]
-        public string QLBHConnectionString {
-            get {
-                return ((string)(this["QLBHConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\sqlexpress;Initial Catalog=C:\\REPOS\\ULTITY\\QUANLYBANHANG_WINFORM_BA" +
-            "SIC\\QUANLYBANHANG.MDF;Integrated Security=True")]
-        public string C__REPOS_ULTITY_QUANLYBANHANG_WINFORM_BASIC_QUANLYBANHANG_MDFConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\sqlexpress;Initial Catalog=QuanLyDiem;Integrated Security=True")]
+        public string QuanLyDiemConnectionString {
             get {
-                return ((string)(this["C__REPOS_ULTITY_QUANLYBANHANG_WINFORM_BASIC_QUANLYBANHANG_MDFConnectionString"]));
+                return ((string)(this["QuanLyDiemConnectionString"]));
             }
         }
     }

@@ -67,5 +67,12 @@ namespace QuanLyBanHang_Winform_Basic
             frmTimKiemHoaDon.MdiParent = this;
             frmTimKiemHoaDon.Show();
         }
+
+        private void mnuBaoCaoHangTon_Click(object sender, EventArgs e)
+        {
+            frmNhapXuatTon frm = new frmNhapXuatTon();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
