@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\frmBangDiemChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBangDiemChiTiet.Designer.cs">
+      <DependentUpon>frmBangDiemChiTiet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmLopSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,12 @@
     </Compile>
     <Compile Include="Forms\frmMonDiemHP.Designer.cs">
       <DependentUpon>frmMonDiemHP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmThongTinHeThong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmThongTinHeThong.Designer.cs">
+      <DependentUpon>frmThongTinHeThong.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Functions.cs" />
     <Compile Include="frmMain.cs">
@@ -74,11 +86,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyDiem.dbml</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\frmBangDiemChiTiet.resx">
+      <DependentUpon>frmBangDiemChiTiet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLopSinhVien.resx">
       <DependentUpon>frmLopSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMonDiemHP.resx">
       <DependentUpon>frmMonDiemHP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmThongTinHeThong.resx">
+      <DependentUpon>frmThongTinHeThong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

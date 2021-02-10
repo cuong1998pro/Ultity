@@ -34,5 +34,17 @@ namespace QuanLyDiem
             frmMonDiemHP frm = new frmMonDiemHP();
             frm.ShowDialog();
         }
+
+        private void buttonItem8_Click(object sender, EventArgs e)
+        {
+            frmThongTinHeThong frm = new frmThongTinHeThong();
+            frm.ShowDialog();
+        }
+
+        private void buttonItem9_Click(object sender, EventArgs e)
+        {
+            frmBangDiemChiTiet frm = new frmBangDiemChiTiet();
+            frm.ShowDialog();
+        }
     }
 }

@@ -51,6 +51,8 @@ namespace QuanLyDiem
             this.dockSite3 = new DevComponents.DotNetBar.DockSite();
             this.dockContainerItem1 = new DevComponents.DotNetBar.DockContainerItem();
             this.dockContainerItem2 = new DevComponents.DotNetBar.DockContainerItem();
+            this.buttonItem8 = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem9 = new DevComponents.DotNetBar.ButtonItem();
             this.dockSite7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.SuspendLayout();
@@ -199,6 +201,7 @@ namespace QuanLyDiem
             // 
             this.buttonItem1.Name = "buttonItem1";
             this.buttonItem1.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.buttonItem8,
             this.buttonItem2});
             this.buttonItem1.Text = "&Hệ thống";
             // 
@@ -232,7 +235,9 @@ namespace QuanLyDiem
             // buttonItem4
             // 
             this.buttonItem4.Name = "buttonItem4";
-            this.buttonItem4.Text = "buttonItem4";
+            this.buttonItem4.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.buttonItem9});
+            this.buttonItem4.Text = "Báo cáo thống kê";
             // 
             // buttonItem5
             // 
@@ -264,6 +269,18 @@ namespace QuanLyDiem
             // 
             this.dockContainerItem2.Name = "dockContainerItem2";
             this.dockContainerItem2.Text = "dockContainerItem2";
+            // 
+            // buttonItem8
+            // 
+            this.buttonItem8.Name = "buttonItem8";
+            this.buttonItem8.Text = "Thông tin hệ thống";
+            this.buttonItem8.Click += new System.EventHandler(this.buttonItem8_Click);
+            // 
+            // buttonItem9
+            // 
+            this.buttonItem9.Name = "buttonItem9";
+            this.buttonItem9.Text = "Bảng điểm chi tiết";
+            this.buttonItem9.Click += new System.EventHandler(this.buttonItem9_Click);
             // 
             // frmMain
             // 
@@ -311,6 +328,8 @@ namespace QuanLyDiem
         private DevComponents.DotNetBar.ButtonItem buttonItem6;
         private DevComponents.DotNetBar.ButtonItem buttonItem7;
         private DevComponents.DotNetBar.ButtonItem btnQuanLyDiem;
+        private DevComponents.DotNetBar.ButtonItem buttonItem8;
+        private DevComponents.DotNetBar.ButtonItem buttonItem9;
     }
 }
 

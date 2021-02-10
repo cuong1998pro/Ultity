@@ -199,4 +199,59 @@
     <Parameter Name="DiemLan2" Parameter="diemLan2" Type="System.Double" DbType="Float" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.ThongTin_SelectAll" Method="ThongTin_SelectAll">
+    <ElementType Name="ThongTin_SelectAllResult">
+      <Column Name="Tinh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DonViChuQuan" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="TenTruong" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="KhoaHoc" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="NganhHoc" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ChuyenNganh" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ThongTin_Update" Method="ThongTin_Update">
+    <Parameter Name="Tinh" Parameter="tinh" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DonViChuQuan" Parameter="donViChuQuan" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="TenTruong" Parameter="tenTruong" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="KhoaHoc" Parameter="khoaHoc" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="NganhHoc" Parameter="nganhHoc" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="ChuyenNganh" Parameter="chuyenNganh" Type="System.String" DbType="NVarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SinhVien_SelectID" Method="SinhVien_SelectID">
+    <Parameter Name="MaSV" Parameter="maSV" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SinhVien_SelectIDResult">
+      <Column Name="MaSV" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DanToc" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NoiSinh" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="MaLop" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.MonHP_SelectAll" Method="MonHP_SelectAll">
+    <ElementType Name="MonHP_SelectAllResult">
+      <Column Name="MaMon" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenMon" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="SoTinChi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaHocKy" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.MonHP_SelectMaSV" Method="MonHP_SelectMaSV">
+    <Parameter Name="MaSV" Parameter="maSV" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="MonHP_SelectMaSVResult">
+      <Column Name="MaMon" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenMon" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="SoTinChi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaHocKy" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DiemHP_Search" Method="DiemHP_Search">
+    <Parameter Name="MaMon" Parameter="maMon" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MaSV" Parameter="maSV" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="DiemHP_SearchResult">
+      <Column Name="Diem" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>
