@@ -28,5 +28,11 @@ namespace QuanLyDiem
             frmLopSinhVien frm = new frmLopSinhVien();
             frm.ShowDialog();
         }
+
+        private void btnQuanLyDiem_Click(object sender, EventArgs e)
+        {
+            frmMonDiemHP frm = new frmMonDiemHP();
+            frm.ShowDialog();
+        }
     }
 }

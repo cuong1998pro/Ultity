@@ -187,6 +187,90 @@ namespace QuanLyDiem
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maSV, hoTen, ngaySinh, gioiTinh, danToc, noiSinh, maLop);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.HocKy_Update")]
+		public int HocKy_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHocKy", DbType="VarChar(50)")] string maHocKy, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenHocKy", DbType="NVarChar(50)")] string tenHocKy)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHocKy, tenHocKy);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.HocKy_SelectAll")]
+		public ISingleResult<HocKy_SelectAllResult> HocKy_SelectAll()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<HocKy_SelectAllResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.HocKy_Insert")]
+		public int HocKy_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHocKy", DbType="VarChar(50)")] string maHocKy, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenHocKy", DbType="NVarChar(50)")] string tenHocKy)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHocKy, tenHocKy);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.HocKy_Delete")]
+		public int HocKy_Delete([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHocKy", DbType="VarChar(50)")] string maHocKy)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHocKy);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DiemHP_Init")]
+		public int DiemHP_Init([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaMon", DbType="VarChar(50)")] string maMon, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="VarChar(50)")] string maLop)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maMon, maLop);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.MonHP_Delete")]
+		public int MonHP_Delete([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaMon", DbType="VarChar(50)")] string maMon)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maMon);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.MonHP_Insert")]
+		public int MonHP_Insert([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaMon", DbType="VarChar(50)")] string maMon, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenMon", DbType="NVarChar(70)")] string tenMon, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTinChi", DbType="Int")] System.Nullable<int> soTinChi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHocKy", DbType="VarChar(50)")] string maHocKy)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maMon, tenMon, soTinChi, maHocKy);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.MonHP_SelectMaHocKy")]
+		public ISingleResult<MonHP_SelectMaHocKyResult> MonHP_SelectMaHocKy([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHocKy", DbType="VarChar(50)")] string maHocKy)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHocKy);
+			return ((ISingleResult<MonHP_SelectMaHocKyResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.MonHP_Update")]
+		public int MonHP_Update([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaMon", DbType="VarChar(50)")] string maMon, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenMon", DbType="NVarChar(70)")] string tenMon, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTinChi", DbType="Int")] System.Nullable<int> soTinChi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHocKy", DbType="VarChar(50)")] string maHocKy)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maMon, tenMon, soTinChi, maHocKy);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BangDiemHP")]
+		public ISingleResult<BangDiemHPResult> BangDiemHP([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="VarChar(50)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaMon", DbType="VarChar(50)")] string maMon)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop, maMon);
+			return ((ISingleResult<BangDiemHPResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DiemHP_UpdateDiemLan1")]
+		public int DiemHP_UpdateDiemLan1([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaSV", DbType="VarChar(50)")] string maSV, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaMon", DbType="VarChar(50)")] string maMon, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DiemLan1", DbType="Float")] System.Nullable<double> diemLan1)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maSV, maMon, diemLan1);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DiemHP_UpdateDiemLan2")]
+		public int DiemHP_UpdateDiemLan2([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaSV", DbType="VarChar(50)")] string maSV, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaMon", DbType="VarChar(50)")] string maMon, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DiemLan2", DbType="Float")] System.Nullable<double> diemLan2)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maSV, maMon, diemLan2);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DiemHP")]
@@ -1499,6 +1583,228 @@ namespace QuanLyDiem
 				if ((this._NoiSinh != value))
 				{
 					this._NoiSinh = value;
+				}
+			}
+		}
+	}
+	
+	public partial class HocKy_SelectAllResult
+	{
+		
+		private string _MaHocKy;
+		
+		private string _TenHocKy;
+		
+		public HocKy_SelectAllResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHocKy", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string MaHocKy
+		{
+			get
+			{
+				return this._MaHocKy;
+			}
+			set
+			{
+				if ((this._MaHocKy != value))
+				{
+					this._MaHocKy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenHocKy", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string TenHocKy
+		{
+			get
+			{
+				return this._TenHocKy;
+			}
+			set
+			{
+				if ((this._TenHocKy != value))
+				{
+					this._TenHocKy = value;
+				}
+			}
+		}
+	}
+	
+	public partial class MonHP_SelectMaHocKyResult
+	{
+		
+		private string _MaMon;
+		
+		private string _TenMon;
+		
+		private int _SoTinChi;
+		
+		private string _MaHocKy;
+		
+		public MonHP_SelectMaHocKyResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaMon", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string MaMon
+		{
+			get
+			{
+				return this._MaMon;
+			}
+			set
+			{
+				if ((this._MaMon != value))
+				{
+					this._MaMon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenMon", DbType="NVarChar(70) NOT NULL", CanBeNull=false)]
+		public string TenMon
+		{
+			get
+			{
+				return this._TenMon;
+			}
+			set
+			{
+				if ((this._TenMon != value))
+				{
+					this._TenMon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTinChi", DbType="Int NOT NULL")]
+		public int SoTinChi
+		{
+			get
+			{
+				return this._SoTinChi;
+			}
+			set
+			{
+				if ((this._SoTinChi != value))
+				{
+					this._SoTinChi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHocKy", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string MaHocKy
+		{
+			get
+			{
+				return this._MaHocKy;
+			}
+			set
+			{
+				if ((this._MaHocKy != value))
+				{
+					this._MaHocKy = value;
+				}
+			}
+		}
+	}
+	
+	public partial class BangDiemHPResult
+	{
+		
+		private string _MaSV;
+		
+		private string _HoTen;
+		
+		private System.DateTime _NgaySinh;
+		
+		private System.Nullable<double> _DiemLan1;
+		
+		private System.Nullable<double> _DiemLan2;
+		
+		public BangDiemHPResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSV", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string MaSV
+		{
+			get
+			{
+				return this._MaSV;
+			}
+			set
+			{
+				if ((this._MaSV != value))
+				{
+					this._MaSV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(70) NOT NULL", CanBeNull=false)]
+		public string HoTen
+		{
+			get
+			{
+				return this._HoTen;
+			}
+			set
+			{
+				if ((this._HoTen != value))
+				{
+					this._HoTen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgaySinh", DbType="DateTime NOT NULL")]
+		public System.DateTime NgaySinh
+		{
+			get
+			{
+				return this._NgaySinh;
+			}
+			set
+			{
+				if ((this._NgaySinh != value))
+				{
+					this._NgaySinh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiemLan1", DbType="Float")]
+		public System.Nullable<double> DiemLan1
+		{
+			get
+			{
+				return this._DiemLan1;
+			}
+			set
+			{
+				if ((this._DiemLan1 != value))
+				{
+					this._DiemLan1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiemLan2", DbType="Float")]
+		public System.Nullable<double> DiemLan2
+		{
+			get
+			{
+				return this._DiemLan2;
+			}
+			set
+			{
+				if ((this._DiemLan2 != value))
+				{
+					this._DiemLan2 = value;
 				}
 			}
 		}

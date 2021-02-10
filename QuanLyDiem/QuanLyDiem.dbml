@@ -124,4 +124,79 @@
     <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.HocKy_Update" Method="HocKy_Update">
+    <Parameter Name="MaHocKy" Parameter="maHocKy" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TenHocKy" Parameter="tenHocKy" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.HocKy_SelectAll" Method="HocKy_SelectAll">
+    <ElementType Name="HocKy_SelectAllResult">
+      <Column Name="MaHocKy" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenHocKy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.HocKy_Insert" Method="HocKy_Insert">
+    <Parameter Name="MaHocKy" Parameter="maHocKy" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TenHocKy" Parameter="tenHocKy" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.HocKy_Delete" Method="HocKy_Delete">
+    <Parameter Name="MaHocKy" Parameter="maHocKy" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DiemHP_Init" Method="DiemHP_Init">
+    <Parameter Name="MaMon" Parameter="maMon" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.MonHP_Delete" Method="MonHP_Delete">
+    <Parameter Name="MaMon" Parameter="maMon" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.MonHP_Insert" Method="MonHP_Insert">
+    <Parameter Name="MaMon" Parameter="maMon" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TenMon" Parameter="tenMon" Type="System.String" DbType="NVarChar(70)" />
+    <Parameter Name="SoTinChi" Parameter="soTinChi" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaHocKy" Parameter="maHocKy" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.MonHP_SelectMaHocKy" Method="MonHP_SelectMaHocKy">
+    <Parameter Name="MaHocKy" Parameter="maHocKy" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="MonHP_SelectMaHocKyResult">
+      <Column Name="MaMon" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenMon" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="SoTinChi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaHocKy" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.MonHP_Update" Method="MonHP_Update">
+    <Parameter Name="MaMon" Parameter="maMon" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TenMon" Parameter="tenMon" Type="System.String" DbType="NVarChar(70)" />
+    <Parameter Name="SoTinChi" Parameter="soTinChi" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaHocKy" Parameter="maHocKy" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.BangDiemHP" Method="BangDiemHP">
+    <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MaMon" Parameter="maMon" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="BangDiemHPResult">
+      <Column Name="MaSV" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DiemLan1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DiemLan2" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DiemHP_UpdateDiemLan1" Method="DiemHP_UpdateDiemLan1">
+    <Parameter Name="MaSV" Parameter="maSV" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MaMon" Parameter="maMon" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DiemLan1" Parameter="diemLan1" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DiemHP_UpdateDiemLan2" Method="DiemHP_UpdateDiemLan2">
+    <Parameter Name="MaSV" Parameter="maSV" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MaMon" Parameter="maMon" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DiemLan2" Parameter="diemLan2" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

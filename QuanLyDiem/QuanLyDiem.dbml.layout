@@ -39,7 +39,7 @@
         <classShapeMoniker Id="467cdade-59e9-4fb6-94dd-1d040e3a8df2" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.84699625651042); (3.5 : 4.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.84699625651042); (3.5 : 4.84699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyDiemDataContext/HocKy/HocKy_MonHP" />
       <nodes>
         <classShapeMoniker Id="4e45b1fb-e7df-4f8c-a774-440e1286a922" />
@@ -52,14 +52,14 @@
         <elementListCompartment Id="6b26eff1-8647-49be-8ecf-978b560d035c" absoluteBounds="3.3899999999999997, 1.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.375 : 2.03929768880208); (6.25 : 2.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.375 : 2.03929768880208); (6.25 : 2.03929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyDiemDataContext/SinhVien/SinhVien_DiemHP" />
       <nodes>
         <classShapeMoniker Id="a776e8a7-8c55-403e-ad3f-4963318dd10c" />
         <classShapeMoniker Id="467cdade-59e9-4fb6-94dd-1d040e3a8df2" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.90949625651042); (3.375 : 1.90949625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 1.90949625651042); (3.375 : 1.90949625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QuanLyDiemDataContext/Lop/Lop_SinhVien" />
       <nodes>
         <classShapeMoniker Id="f033a75b-a983-4c88-8eeb-62e00f539a99" />

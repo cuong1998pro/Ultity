@@ -43,14 +43,14 @@ namespace QuanLyDiem
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem7 = new DevComponents.DotNetBar.ButtonItem();
+            this.btnQuanLyDiem = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem4 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem6 = new DevComponents.DotNetBar.ButtonItem();
             this.dockSite3 = new DevComponents.DotNetBar.DockSite();
             this.dockContainerItem1 = new DevComponents.DotNetBar.DockContainerItem();
             this.dockContainerItem2 = new DevComponents.DotNetBar.DockContainerItem();
-            this.buttonItem7 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem8 = new DevComponents.DotNetBar.ButtonItem();
             this.dockSite7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.SuspendLayout();
@@ -214,8 +214,20 @@ namespace QuanLyDiem
             this.buttonItem3.Name = "buttonItem3";
             this.buttonItem3.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.buttonItem7,
-            this.buttonItem8});
+            this.btnQuanLyDiem});
             this.buttonItem3.Text = "Xử lý dữ liệu";
+            // 
+            // buttonItem7
+            // 
+            this.buttonItem7.Name = "buttonItem7";
+            this.buttonItem7.Text = "Xử lý dữ liệu lớp, &sinh viên";
+            this.buttonItem7.Click += new System.EventHandler(this.buttonItem7_Click);
+            // 
+            // btnQuanLyDiem
+            // 
+            this.btnQuanLyDiem.Name = "btnQuanLyDiem";
+            this.btnQuanLyDiem.Text = "Xử lý dữ liệu Học kỳ, Môn học, Điểm học phần";
+            this.btnQuanLyDiem.Click += new System.EventHandler(this.btnQuanLyDiem_Click);
             // 
             // buttonItem4
             // 
@@ -252,17 +264,6 @@ namespace QuanLyDiem
             // 
             this.dockContainerItem2.Name = "dockContainerItem2";
             this.dockContainerItem2.Text = "dockContainerItem2";
-            // 
-            // buttonItem7
-            // 
-            this.buttonItem7.Name = "buttonItem7";
-            this.buttonItem7.Text = "Xử lý dữ liệu lớp, &sinh viên";
-            this.buttonItem7.Click += new System.EventHandler(this.buttonItem7_Click);
-            // 
-            // buttonItem8
-            // 
-            this.buttonItem8.Name = "buttonItem8";
-            this.buttonItem8.Text = "buttonItem8";
             // 
             // frmMain
             // 
@@ -309,7 +310,7 @@ namespace QuanLyDiem
         private DevComponents.DotNetBar.ButtonItem buttonItem5;
         private DevComponents.DotNetBar.ButtonItem buttonItem6;
         private DevComponents.DotNetBar.ButtonItem buttonItem7;
-        private DevComponents.DotNetBar.ButtonItem buttonItem8;
+        private DevComponents.DotNetBar.ButtonItem btnQuanLyDiem;
     }
 }
 
