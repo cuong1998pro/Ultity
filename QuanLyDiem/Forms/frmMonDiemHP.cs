@@ -73,6 +73,7 @@ namespace QuanLyDiem.Forms
             Functions.Binding(txtMaMon, "Text", cboMonHoc.DataSource, "MaMon");
             Functions.Binding(txtTenMon, "Text", cboMonHoc.DataSource, "TenMon");
             Functions.Binding(txtSoTinChi, "Text", cboMonHoc.DataSource, "SoTinChi");
+            cboChonLop_SelectedIndexChanged(null, null);
         }
 
         private void cboMonHoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -80,7 +81,7 @@ namespace QuanLyDiem.Forms
             var maLop = cboChonLop.Text;
             var maMon = txtMaMon.Text;
             dt.DiemHP_Init(maMon, maLop);
-            dgvBangDiem.DataSource = dt.BangDiemHP(maLop, maMon);
+            cboChonLop_SelectedIndexChanged(null, null);
         }
 
         private void btnLuuMonHoc_Click(object sender, EventArgs e)
@@ -113,7 +114,9 @@ namespace QuanLyDiem.Forms
 
         private void cboChonLop_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cboMonHoc_SelectedIndexChanged(null, null);
+            var maLop = cboChonLop.Text;
+            var maMon = cboMonHoc.Text;
+            dgvBangDiem.DataSource = dt.BangDiemHP(maLop, maMon);
         }
 
         private void dgvBangDiem_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -124,7 +127,18 @@ namespace QuanLyDiem.Forms
                 var maMon = txtMaMon.Text.Trim();
                 var maSV = row.Cells["MaSV"].Value.ToString();
                 float diemLan1 = float.Parse(row.Cells["DiemLan1"].Value.ToString());
-                dt.DiemHP_UpdateDiemLan1(maSV, maMon, diemLan1);
+                if (diemLan1 >= 0 && diemLan1 <= 100)
+                {
+                    if (diemLan1 > 10)
+                    {
+                        diemLan1 = diemLan1 / 10;
+                    }
+                    dt.DiemHP_UpdateDiemLan1(maSV, maMon, diemLan1);
+                }
+                else
+                {
+                    MessageBox.Show("Diem khong hop le");
+                }
             }
 
             if (row.Cells["DiemLan2"].Value.ToString() != string.Empty)
@@ -132,7 +146,18 @@ namespace QuanLyDiem.Forms
                 var maMon = txtMaMon.Text.Trim();
                 var maSV = row.Cells["MaSV"].Value.ToString();
                 float diemLan2 = float.Parse(row.Cells["DiemLan2"].Value.ToString());
-                dt.DiemHP_UpdateDiemLan2(maSV, maMon, diemLan2);
+                if (diemLan2 >= 0 && diemLan2 <= 100)
+                {
+                    if (diemLan2 > 10)
+                    {
+                        diemLan2 = diemLan2 / 10;
+                    }
+                    dt.DiemHP_UpdateDiemLan2(maSV, maMon, diemLan2);
+                }
+                else
+                {
+                    MessageBox.Show("Diem khong hop le");
+                }
             }
         }
 
@@ -148,6 +173,7 @@ namespace QuanLyDiem.Forms
             Functions.Binding(txtMaHocKy, "Text", cboChonHocKy.DataSource, "MaHocKy");
             Functions.Binding(txtTenHocKy, "Text", cboChonHocKy.DataSource, "TenHocKy");
             txtMaHocKy.Enabled = txtMaMon.Enabled = false;
+            cboMonHoc_SelectedIndexChanged(null, null);
         }
     }
 }
