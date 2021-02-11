@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="WebsiteTinTuc.Home" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Website tin tức ASP.NET</title>
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="menu_top">
+            <div id="menu">
+                <ul>
+                    <li><a href="\index.asp">Trang chủ</a></li>
+
+                    <asp:Repeater ID="rpBanTin" runat="server">
+                        <ItemTemplate>
+                            <li><a href="#"><%# Eval("NoiDung") %></a></li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <li><a href="#">Đăng nhập</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="main_content">
+            <div id="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="right_content">
+                <h1>Tiêu đề bên phải</h1>
+                <div id="ndright">
+                    Đây là nội dung bên phải
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="ndfooter">
+                <p>Copyright: Phạm Quang Cường, VMU</p>
+                <p>Liên hệ: cuong1998pro@gmail.com</p>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
