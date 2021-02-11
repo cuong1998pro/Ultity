@@ -37,7 +37,6 @@ namespace QuanLyDiem.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-            this.btnNhapExcel = new DevComponents.DotNetBar.ButtonX();
             this.btnXuatExcel = new DevComponents.DotNetBar.ButtonX();
             this.dgvBangDiemChiTiet = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.MaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,7 +73,6 @@ namespace QuanLyDiem.Forms
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx1.Controls.Add(this.btnNhapExcel);
             this.panelEx1.Controls.Add(this.btnXuatExcel);
             this.panelEx1.Controls.Add(this.dgvBangDiemChiTiet);
             this.panelEx1.Controls.Add(this.trvSinhVien);
@@ -111,23 +109,13 @@ namespace QuanLyDiem.Forms
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
-            // 
-            // btnNhapExcel
-            // 
-            this.btnNhapExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnNhapExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnNhapExcel.Location = new System.Drawing.Point(359, 163);
-            this.btnNhapExcel.Name = "btnNhapExcel";
-            this.btnNhapExcel.Size = new System.Drawing.Size(133, 23);
-            this.btnNhapExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnNhapExcel.TabIndex = 23;
-            this.btnNhapExcel.Text = "Nhập Excel";
+            this.panelEx1.Click += new System.EventHandler(this.panelEx1_Click);
             // 
             // btnXuatExcel
             // 
             this.btnXuatExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnXuatExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnXuatExcel.Location = new System.Drawing.Point(220, 163);
+            this.btnXuatExcel.Location = new System.Drawing.Point(743, 131);
             this.btnXuatExcel.Name = "btnXuatExcel";
             this.btnXuatExcel.Size = new System.Drawing.Size(133, 23);
             this.btnXuatExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -168,9 +156,9 @@ namespace QuanLyDiem.Forms
             this.dgvBangDiemChiTiet.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvBangDiemChiTiet.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvBangDiemChiTiet.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dgvBangDiemChiTiet.Location = new System.Drawing.Point(220, 197);
+            this.dgvBangDiemChiTiet.Location = new System.Drawing.Point(220, 173);
             this.dgvBangDiemChiTiet.Name = "dgvBangDiemChiTiet";
-            this.dgvBangDiemChiTiet.Size = new System.Drawing.Size(672, 406);
+            this.dgvBangDiemChiTiet.Size = new System.Drawing.Size(672, 430);
             this.dgvBangDiemChiTiet.TabIndex = 21;
             // 
             // MaMon
@@ -528,7 +516,6 @@ namespace QuanLyDiem.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemHP;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemChu;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemSo;
-        private DevComponents.DotNetBar.ButtonX btnNhapExcel;
         private DevComponents.DotNetBar.ButtonX btnXuatExcel;
     }
 }

@@ -70,6 +70,9 @@ namespace QuanLyDiem.Forms
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.btnExport = new DevComponents.DotNetBar.ButtonX();
+            this.btnImport = new DevComponents.DotNetBar.ButtonX();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).BeginInit();
             this.groupPanel1.SuspendLayout();
@@ -233,6 +236,8 @@ namespace QuanLyDiem.Forms
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnImport);
+            this.panel1.Controls.Add(this.btnExport);
             this.panel1.Controls.Add(this.txtTimSV);
             this.panel1.Controls.Add(this.labelX8);
             this.panel1.Controls.Add(this.btnXoaSV);
@@ -277,7 +282,7 @@ namespace QuanLyDiem.Forms
             this.txtTimSV.Location = new System.Drawing.Point(391, 117);
             this.txtTimSV.Name = "txtTimSV";
             this.txtTimSV.PreventEnterBeep = true;
-            this.txtTimSV.Size = new System.Drawing.Size(379, 22);
+            this.txtTimSV.Size = new System.Drawing.Size(188, 22);
             this.txtTimSV.TabIndex = 17;
             this.txtTimSV.TextChanged += new System.EventHandler(this.txtTimSV_TextChanged);
             // 
@@ -595,6 +600,34 @@ namespace QuanLyDiem.Forms
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "Danh sách lớp:";
             // 
+            // btnExport
+            // 
+            this.btnExport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnExport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnExport.Location = new System.Drawing.Point(595, 117);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(75, 23);
+            this.btnExport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnExport.TabIndex = 18;
+            this.btnExport.Text = "Export";
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // btnImport
+            // 
+            this.btnImport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnImport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnImport.Location = new System.Drawing.Point(686, 117);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(75, 23);
+            this.btnImport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnImport.TabIndex = 19;
+            this.btnImport.Text = "Import";
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
             // frmLopSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -653,5 +686,8 @@ namespace QuanLyDiem.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn DanToc;
         private System.Windows.Forms.DataGridViewTextBoxColumn NoiSinh;
+        private DevComponents.DotNetBar.ButtonX btnImport;
+        private DevComponents.DotNetBar.ButtonX btnExport;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }

@@ -16,6 +16,7 @@ namespace QuanLyDiem
         public frmMain()
         {
             InitializeComponent();
+            timer1.Start();
         }
 
         private void buttonItem2_Click(object sender, EventArgs e)
@@ -44,6 +45,18 @@ namespace QuanLyDiem
         private void buttonItem9_Click(object sender, EventArgs e)
         {
             frmBangDiemChiTiet frm = new frmBangDiemChiTiet();
+            frm.ShowDialog();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            var time = DateTime.Now.ToString("dddd dd/MM/yyyy \r\nhh:mm:ss");
+            lblTime.Text = time;
+        }
+
+        private void btnThongKeSinhVien_Click(object sender, EventArgs e)
+        {
+            frmThongKeSinhVienTheoLop frm = new frmThongKeSinhVienTheoLop();
             frm.ShowDialog();
         }
     }

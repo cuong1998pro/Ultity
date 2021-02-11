@@ -158,5 +158,10 @@ namespace QuanLyDiem.Forms
 
             app.Visible = true;
         }
+
+        private void panelEx1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

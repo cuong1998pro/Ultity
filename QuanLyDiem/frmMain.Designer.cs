@@ -30,6 +30,7 @@ namespace QuanLyDiem
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.dotNetBarManager1 = new DevComponents.DotNetBar.DotNetBarManager(this.components);
             this.dockSite4 = new DevComponents.DotNetBar.DockSite();
@@ -41,35 +42,43 @@ namespace QuanLyDiem
             this.dockSite7 = new DevComponents.DotNetBar.DockSite();
             this.bar1 = new DevComponents.DotNetBar.Bar();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem8 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem7 = new DevComponents.DotNetBar.ButtonItem();
             this.btnQuanLyDiem = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem4 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem6 = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem9 = new DevComponents.DotNetBar.ButtonItem();
+            this.btnThongKeSinhVien = new DevComponents.DotNetBar.ButtonItem();
             this.dockSite3 = new DevComponents.DotNetBar.DockSite();
             this.dockContainerItem1 = new DevComponents.DotNetBar.DockContainerItem();
             this.dockContainerItem2 = new DevComponents.DotNetBar.DockContainerItem();
-            this.buttonItem8 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem9 = new DevComponents.DotNetBar.ButtonItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
+            this.lblTime = new DevComponents.DotNetBar.LabelX();
             this.dockSite7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelEx2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelEx1
             // 
+            this.panelEx1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelEx1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
-            this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelEx1.Location = new System.Drawing.Point(0, 25);
+            this.panelEx1.Location = new System.Drawing.Point(0, 144);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(1045, 616);
+            this.panelEx1.Size = new System.Drawing.Size(1045, 497);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx1.Style.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelEx1.Style.BackgroundImage")));
             this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
             this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
@@ -184,9 +193,7 @@ namespace QuanLyDiem
             this.bar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.buttonItem1,
             this.buttonItem3,
-            this.buttonItem4,
-            this.buttonItem5,
-            this.buttonItem6});
+            this.buttonItem4});
             this.bar1.Location = new System.Drawing.Point(0, 0);
             this.bar1.MenuBar = true;
             this.bar1.Name = "bar1";
@@ -204,6 +211,12 @@ namespace QuanLyDiem
             this.buttonItem8,
             this.buttonItem2});
             this.buttonItem1.Text = "&Hệ thống";
+            // 
+            // buttonItem8
+            // 
+            this.buttonItem8.Name = "buttonItem8";
+            this.buttonItem8.Text = "Thông tin hệ thống";
+            this.buttonItem8.Click += new System.EventHandler(this.buttonItem8_Click);
             // 
             // buttonItem2
             // 
@@ -236,18 +249,21 @@ namespace QuanLyDiem
             // 
             this.buttonItem4.Name = "buttonItem4";
             this.buttonItem4.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem9});
+            this.buttonItem9,
+            this.btnThongKeSinhVien});
             this.buttonItem4.Text = "Báo cáo thống kê";
             // 
-            // buttonItem5
+            // buttonItem9
             // 
-            this.buttonItem5.Name = "buttonItem5";
-            this.buttonItem5.Text = "buttonItem5";
+            this.buttonItem9.Name = "buttonItem9";
+            this.buttonItem9.Text = "Bảng điểm chi tiết";
+            this.buttonItem9.Click += new System.EventHandler(this.buttonItem9_Click);
             // 
-            // buttonItem6
+            // btnThongKeSinhVien
             // 
-            this.buttonItem6.Name = "buttonItem6";
-            this.buttonItem6.Text = "buttonItem6";
+            this.btnThongKeSinhVien.Name = "btnThongKeSinhVien";
+            this.btnThongKeSinhVien.Text = "Thống kê sinh viên";
+            this.btnThongKeSinhVien.Click += new System.EventHandler(this.btnThongKeSinhVien_Click);
             // 
             // dockSite3
             // 
@@ -270,23 +286,57 @@ namespace QuanLyDiem
             this.dockContainerItem2.Name = "dockContainerItem2";
             this.dockContainerItem2.Text = "dockContainerItem2";
             // 
-            // buttonItem8
+            // pictureBox1
             // 
-            this.buttonItem8.Name = "buttonItem8";
-            this.buttonItem8.Text = "Thông tin hệ thống";
-            this.buttonItem8.Click += new System.EventHandler(this.buttonItem8_Click);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(199, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(658, 126);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // buttonItem9
+            // timer1
             // 
-            this.buttonItem9.Name = "buttonItem9";
-            this.buttonItem9.Text = "Bảng điểm chi tiết";
-            this.buttonItem9.Click += new System.EventHandler(this.buttonItem9_Click);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panelEx2
+            // 
+            this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx2.Controls.Add(this.lblTime);
+            this.panelEx2.Controls.Add(this.pictureBox1);
+            this.panelEx2.DisabledBackColor = System.Drawing.Color.Empty;
+            this.panelEx2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelEx2.Location = new System.Drawing.Point(0, 25);
+            this.panelEx2.Name = "panelEx2";
+            this.panelEx2.Size = new System.Drawing.Size(1045, 132);
+            this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx2.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx2.Style.GradientAngle = 90;
+            this.panelEx2.TabIndex = 12;
+            // 
+            // lblTime
+            // 
+            // 
+            // 
+            // 
+            this.lblTime.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblTime.Location = new System.Drawing.Point(863, 35);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(170, 55);
+            this.lblTime.TabIndex = 1;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 641);
+            this.Controls.Add(this.panelEx2);
             this.Controls.Add(this.dockSite2);
             this.Controls.Add(this.dockSite1);
             this.Controls.Add(this.panelEx1);
@@ -301,6 +351,8 @@ namespace QuanLyDiem
             this.Text = "Phần mềm quản lý điểm theo hệ thống tín chỉ";
             this.dockSite7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelEx2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -324,12 +376,15 @@ namespace QuanLyDiem
         private DevComponents.DotNetBar.ButtonItem buttonItem2;
         private DevComponents.DotNetBar.ButtonItem buttonItem3;
         private DevComponents.DotNetBar.ButtonItem buttonItem4;
-        private DevComponents.DotNetBar.ButtonItem buttonItem5;
-        private DevComponents.DotNetBar.ButtonItem buttonItem6;
         private DevComponents.DotNetBar.ButtonItem buttonItem7;
         private DevComponents.DotNetBar.ButtonItem btnQuanLyDiem;
         private DevComponents.DotNetBar.ButtonItem buttonItem8;
         private DevComponents.DotNetBar.ButtonItem buttonItem9;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
+        private DevComponents.DotNetBar.PanelEx panelEx2;
+        private DevComponents.DotNetBar.LabelX lblTime;
+        private DevComponents.DotNetBar.ButtonItem btnThongKeSinhVien;
     }
 }
 

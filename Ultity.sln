@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyBanHang_Winform_Basic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyDiem", "QuanLyDiem\QuanLyDiem.csproj", "{960B0080-DE32-470E-884A-6083C24C161F}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QuanLyDiem1.0", "QuanLyDiem1.0\QuanLyDiem1.0.vdproj", "{B0E4E5F0-7902-443F-A979-4220DA320DB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,8 @@ Global
 		{960B0080-DE32-470E-884A-6083C24C161F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{960B0080-DE32-470E-884A-6083C24C161F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{960B0080-DE32-470E-884A-6083C24C161F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0E4E5F0-7902-443F-A979-4220DA320DB3}.Debug|Any CPU.ActiveCfg = Debug
+		{B0E4E5F0-7902-443F-A979-4220DA320DB3}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

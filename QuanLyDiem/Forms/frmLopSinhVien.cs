@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.OleDb;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace QuanLyDiem.Forms
 {
@@ -152,6 +149,7 @@ namespace QuanLyDiem.Forms
         private void btnXoaSV_Click(object sender, EventArgs e)
         {
             dt.SinhVien_Delete(txtMaSV.Text);
+            cboChonLop_SelectedIndexChanged(null, null);
         }
 
         private void txtTimSV_TextChanged(object sender, EventArgs e)
@@ -159,6 +157,81 @@ namespace QuanLyDiem.Forms
             var hoTen = txtTimSV.Text;
             var maLop = txtMaLop.Text;
             AddBindingToDataGridView(dt.SinhVien_Search(hoTen, maLop));
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            //excell -> workbook -> sheet
+            _Application app = new Microsoft.Office.Interop.Excel.Application();
+            _Workbook workbook = app.Workbooks.Add();
+            _Worksheet workSheet = workbook.Sheets["Sheet1"];
+            workSheet = workbook.ActiveSheet;
+
+            for (int j = 0; j < dgvSinhVien.ColumnCount; j++)
+            {
+                workSheet.Cells[1, j + 1] = dgvSinhVien.Columns[j].HeaderText;
+            }
+
+            for (int i = 0; i < dgvSinhVien.RowCount; i++)
+            {
+                for (int j = 0; j < dgvSinhVien.ColumnCount; j++)
+                {
+                    workSheet.Cells[i + 2, j + 1] = dgvSinhVien[j, i].Value.ToString();
+                }
+            }
+            app.Visible = true;
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openFileDialog.Filter = "Mở File Excel .xls | *.xls";
+                if (openFileDialog.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
+                var filename = openFileDialog.FileName;
+                if (filename == "")
+                {
+                    return;
+                }
+                var excelConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + filename + ";Extended Properties=Excel 12.0 Xml;";
+                var con = new OleDbConnection(excelConnectionString);
+                var table = new System.Data.DataTable();
+                var dap = new OleDbDataAdapter("SELECT * FROM [Sheet1$]", con);
+                dap.Fill(table);
+                int totalRow = 0;
+                var maLop = txtMaLop.Text;
+
+                foreach (DataRow row in table.Rows)
+                {
+                    var maSV = row[0].ToString();
+                    var hoten = row[1].ToString();
+                    var ngaySinh = DateTime.Parse(row[2].ToString());
+                    var gioiTinh = row[5].ToString();
+                    var noiSinh = row[4].ToString();
+                    var danToc = row[3].ToString();
+
+                    var sv = dt.SinhVien_SelectID(maSV);
+                    if (sv.Count() == 0)
+                    {
+                        dt.SinhVien_Insert(maSV, hoten, ngaySinh, gioiTinh, danToc, noiSinh, maLop);
+                        totalRow++;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Da ton tai sinh vien co ma " + maSV + ". Hay chon ma sv khac. Dong loi" + table.Rows.IndexOf(row));
+                    }
+                }
+                cboChonLop_SelectedIndexChanged(null, null);
+                cboChonLop.Text = maLop;
+                MessageBox.Show("Da them " + totalRow + " ban ghi");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
