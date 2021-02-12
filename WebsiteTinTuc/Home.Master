@@ -14,14 +14,27 @@
         <div id="menu_top">
             <div id="menu">
                 <ul>
-                    <li><a href="\index.asp">Trang chủ</a></li>
+                    <li><a href="/index.aspx">Trang chủ</a></li>
 
                     <asp:Repeater ID="rpBanTin" runat="server">
                         <ItemTemplate>
-                            <li><a href="#"><%# Eval("NoiDung") %></a></li>
+                            <li><a href="/bantin.aspx?idBanTin=<%# Eval("ID") %>"><%# Eval("NoiDung") %></a></li>
                         </ItemTemplate>
                     </asp:Repeater>
-                    <li><a href="#">Đăng nhập</a></li>
+                    <%
+                        if ((bool)Session["admin"] == false)
+                        {
+                    %>
+                    <li><a href="/user/login.aspx">Đăng nhập</a></li>
+                    <li><a href="/user/register.aspx">Đăng ký</a></li>
+                    <%
+                        }
+                        else
+                        {
+                    %>
+                    <li><a href="/baiviet/them.aspx">Thêm bài viết</a></li>
+                    <li><a href="/user/logout.aspx">Đăng xuất</a></li>
+                    <%} %>
                 </ul>
             </div>
         </div>
@@ -31,9 +44,8 @@
                 </asp:ContentPlaceHolder>
             </div>
             <div id="right_content">
-                <h1>Tiêu đề bên phải</h1>
-                <div id="ndright">
-                    Đây là nội dung bên phải
+                <h1>Bài viết bạn nên quan tâm</h1>
+                <div id="ndcontent">
                 </div>
             </div>
         </div>

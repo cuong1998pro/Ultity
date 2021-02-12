@@ -84,6 +84,23 @@
     text-align: justify;
 }
 
+    #ndcontent ul {
+        margin: 20px 15px 20px 20px;
+    }
+
+        #ndcontent ul li a {
+            color: #033b5f;
+            text-decoration: none;
+            margin: 10px 0;
+            display: block;
+        }
+
+            #ndcontent ul li a :hover {
+                color: #6f0322;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
 #content h1, #right_content h1 {
     margin: 0;
     padding: 5px 10px;
@@ -104,3 +121,4 @@
     color: #fff;
     padding: 15px;
 }
+

@@ -8,12 +8,6 @@
         <elementListCompartment Id="45e694a4-899b-453c-87a1-74b8caf4c537" absoluteBounds="0.765, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="fdd6d276-8209-49d9-9b6b-14951c8c9bb8" absoluteBounds="0.75, 3.75, 2, 1.3862939453125005">
-      <DataClassMoniker Name="/TinTucDataContext/DangNhap" />
-      <nestedChildShapes>
-        <elementListCompartment Id="cae4f45f-6153-48ac-963e-75e3dbb22a0b" absoluteBounds="0.765, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="421509a5-dc26-4e79-8d5b-b9724b08e5ff" absoluteBounds="3.5, 0.875, 2, 1.9631982421874998">
       <DataClassMoniker Name="/TinTucDataContext/ChiTiet" />
       <nestedChildShapes>
@@ -27,5 +21,11 @@
         <classShapeMoniker Id="421509a5-dc26-4e79-8d5b-b9724b08e5ff" />
       </nodes>
     </associationConnector>
+    <classShape Id="4180a77e-30d6-4796-81e8-35f149f6d5e8" absoluteBounds="2.75, 4.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/TinTucDataContext/DangNhap" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b4bcd362-c003-4316-9a54-3a7f7776b7c0" absoluteBounds="2.765, 4.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
