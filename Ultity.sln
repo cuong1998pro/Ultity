@@ -13,6 +13,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QuanLyDiem1.0", "QuanLyDiem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebsiteTinTuc", "WebsiteTinTuc\WebsiteTinTuc.csproj", "{ACF8692A-2A5B-4F0E-9212-EA0FFA04857B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenium", "Selenium\Selenium.csproj", "{000E1827-E5C5-4170-B969-EE1828221798}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{ACF8692A-2A5B-4F0E-9212-EA0FFA04857B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACF8692A-2A5B-4F0E-9212-EA0FFA04857B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACF8692A-2A5B-4F0E-9212-EA0FFA04857B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{000E1827-E5C5-4170-B969-EE1828221798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{000E1827-E5C5-4170-B969-EE1828221798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{000E1827-E5C5-4170-B969-EE1828221798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{000E1827-E5C5-4170-B969-EE1828221798}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
