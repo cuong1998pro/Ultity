@@ -230,7 +230,7 @@ namespace Selenium
         {
             //secufiles.com
             fd = new FirefoxDriver();
-            fd.Url = "https://neilpatel.com/blog/speed-is-a-killer/";
+            fd.Url = "https://secufiles.com/";
             fd.Navigate();
 
             WaitLoad(fd);
