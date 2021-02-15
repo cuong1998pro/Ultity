@@ -35,40 +35,46 @@
                 </Grid.ColumnDefinitions>
 
                 <Grid Grid.Row="0" Grid.Column="0">
-                    <ToggleButton IsChecked="{Binding IsCheckVietNam}">BXH Việt Nam</ToggleButton>
+                    <ToggleButton x:Name="btnVietNam" IsChecked="{Binding IsCheckVietNam}">BXH Việt Nam</ToggleButton>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="1">
-                    <ToggleButton IsChecked="{Binding IsCheckAuMy}">BXH Âu Mỹ</ToggleButton>
+                    <ToggleButton x:Name="btnAuMy" IsChecked="{Binding IsCheckAuMy}">BXH Âu Mỹ</ToggleButton>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="2">
-                    <ToggleButton IsChecked="{Binding IsCheckHanQuoc}">BXH Hàn Quốc</ToggleButton>
+                    <ToggleButton x:Name="btnHanQuoc" IsChecked="{Binding IsCheckHanQuoc}">BXH Hàn Quốc</ToggleButton>
                 </Grid>
             </Grid>
 
             <!--Top 10-->
             <Grid Grid.Row="1">
+
                 <ListBox x:Name="lsbTopSong" HorizontalAlignment="Stretch">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Border Width="480" VerticalAlignment="Stretch"  Height="80" BorderThickness="1" BorderBrush="#cccccc" Padding="10" Margin="0 0 0 5">
+                            <Border Width="460" VerticalAlignment="Stretch"  Height="80" BorderThickness="1" BorderBrush="#cccccc" Padding="10" Margin="0 0 0 5">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="90" ></ColumnDefinition>
+                                        <ColumnDefinition Width="30" ></ColumnDefinition>
+                                        <ColumnDefinition Width="65" ></ColumnDefinition>
                                         <ColumnDefinition ></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
                                     <Grid Grid.Column="0">
-                                        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center">1</TextBlock>
+                                        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding rakingStatus}"></TextBlock>
                                     </Grid>
                                     <Grid Grid.Column="1">
+                                        <Image Margin="5" Stretch="Fill" Source="{Binding thumbnail}">
+                                        </Image>
+                                    </Grid>
+                                    <Grid Grid.Column="2">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="auto"></RowDefinition>
                                             <RowDefinition></RowDefinition>
                                         </Grid.RowDefinitions>
                                         <Grid Grid.Row="0">
-                                            <TextBlock Margin="0 5 0 10px " FontWeight="DemiBold" Foreground="blue" Text="Ten bai hat"></TextBlock>
+                                            <TextBlock Margin="0 5 0 10px " FontWeight="DemiBold" Foreground="blue" Text="{Binding title}"></TextBlock>
                                         </Grid>
                                         <Grid Grid.Row="1">
-                                            <TextBlock Text="Ca si"></TextBlock>
+                                            <TextBlock Text="{Binding artistsNames}"></TextBlock>
                                         </Grid>
                                     </Grid>
                                 </Grid>
