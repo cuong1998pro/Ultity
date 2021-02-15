@@ -1,0 +1,92 @@
+﻿<Window x:Class="ZingMp3CrawData.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZingMp3CrawData"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="768" Width="1366"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary Source="Style.xaml">
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500*" />
+            <ColumnDefinition Width="858*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="596*"></RowDefinition>
+            <RowDefinition Height="141*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <ToggleButton IsChecked="{Binding IsCheckVietNam}">BXH Việt Nam</ToggleButton>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <ToggleButton IsChecked="{Binding IsCheckAuMy}">BXH Âu Mỹ</ToggleButton>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="2">
+                    <ToggleButton IsChecked="{Binding IsCheckHanQuoc}">BXH Hàn Quốc</ToggleButton>
+                </Grid>
+            </Grid>
+
+            <!--Top 10-->
+            <Grid Grid.Row="1">
+                <ListBox x:Name="lsbTopSong" HorizontalAlignment="Stretch">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Width="480" VerticalAlignment="Stretch"  Height="80" BorderThickness="1" BorderBrush="#cccccc" Padding="10" Margin="0 0 0 5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="90" ></ColumnDefinition>
+                                        <ColumnDefinition ></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center">1</TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"></RowDefinition>
+                                            <RowDefinition></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <TextBlock Margin="0 5 0 10px " FontWeight="DemiBold" Foreground="blue" Text="Ten bai hat"></TextBlock>
+                                        </Grid>
+                                        <Grid Grid.Row="1">
+                                            <TextBlock Text="Ca si"></TextBlock>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="0">
+            <TextBlock VerticalAlignment="top" HorizontalAlignment="Left" Margin="10px 0 10px 0"  FontSize="13px" FontWeight="Bold">
+               Lyric:
+            </TextBlock>
+            <TextBlock x:Name="lblLyric" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10px 30px 10px 0">af</TextBlock>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Button x:Name="btnPlay" Width="200" Height="30"  >Phát bài hát</Button>
+        </Grid>
+    </Grid>
+</Window>

@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenium", "Selenium\Seleni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrawData", "CrawData\CrawData.csproj", "{02BA0123-0D3F-42F2-BF98-23A2BA6CF5A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrawDataHowKteam", "CrawDataHowKteam\CrawDataHowKteam.csproj", "{1B99FE8F-36AC-4BB4-A6B6-409912DE73A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZingMp3CrawData", "ZingMp3CrawData\ZingMp3CrawData.csproj", "{B2D00EF0-A719-434E-9954-80FFD1AA92B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,14 @@ Global
 		{02BA0123-0D3F-42F2-BF98-23A2BA6CF5A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02BA0123-0D3F-42F2-BF98-23A2BA6CF5A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02BA0123-0D3F-42F2-BF98-23A2BA6CF5A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B99FE8F-36AC-4BB4-A6B6-409912DE73A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B99FE8F-36AC-4BB4-A6B6-409912DE73A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B99FE8F-36AC-4BB4-A6B6-409912DE73A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B99FE8F-36AC-4BB4-A6B6-409912DE73A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2D00EF0-A719-434E-9954-80FFD1AA92B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2D00EF0-A719-434E-9954-80FFD1AA92B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2D00EF0-A719-434E-9954-80FFD1AA92B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2D00EF0-A719-434E-9954-80FFD1AA92B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
