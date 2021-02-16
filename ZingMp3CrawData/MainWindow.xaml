@@ -16,10 +16,7 @@
             <ColumnDefinition Width="500*" />
             <ColumnDefinition Width="858*" />
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="596*"></RowDefinition>
-            <RowDefinition Height="141*"></RowDefinition>
-        </Grid.RowDefinitions>
+      
 
         <Grid Grid.RowSpan="2">
             <Grid.RowDefinitions>
@@ -51,7 +48,7 @@
                 <ListBox x:Name="lsbTopSong" HorizontalAlignment="Stretch">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Border Width="460" VerticalAlignment="Stretch"  Height="80" BorderThickness="1" BorderBrush="#cccccc" Padding="10" Margin="0 0 0 5">
+                            <Border MouseDown="Border_MouseDown" Width="460" VerticalAlignment="Stretch"  Height="80" BorderThickness="1" BorderBrush="#cccccc" Padding="10" Margin="0 0 0 5">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="30" ></ColumnDefinition>
@@ -83,16 +80,11 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </Grid>
-        </Grid>
 
-        <Grid Grid.Column="1" Grid.Row="0">
-            <TextBlock VerticalAlignment="top" HorizontalAlignment="Left" Margin="10px 0 10px 0"  FontSize="13px" FontWeight="Bold">
-               Lyric:
-            </TextBlock>
-            <TextBlock x:Name="lblLyric" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10px 30px 10px 0">af</TextBlock>
-        </Grid>
-        <Grid Grid.Column="1" Grid.Row="1">
-            <Button x:Name="btnPlay" Width="200" Height="30"  >Phát bài hát</Button>
-        </Grid>
+           
+        </Grid> 
+        <Grid Grid.Column="1">
+            <WebBrowser x:Name="wbMain" Navigated="MainBrowser_LoadCompleted"></WebBrowser>
+            </Grid>
     </Grid>
 </Window>
