@@ -59,7 +59,7 @@ namespace TeamSeer
             // 
             // btnMoNotePad
             // 
-            this.btnMoNotePad.Location = new System.Drawing.Point(58, 80);
+            this.btnMoNotePad.Location = new System.Drawing.Point(58, 71);
             this.btnMoNotePad.Name = "btnMoNotePad";
             this.btnMoNotePad.Size = new System.Drawing.Size(113, 23);
             this.btnMoNotePad.TabIndex = 0;
@@ -69,7 +69,7 @@ namespace TeamSeer
             // 
             // txtCommand
             // 
-            this.txtCommand.Location = new System.Drawing.Point(107, 37);
+            this.txtCommand.Location = new System.Drawing.Point(107, 22);
             this.txtCommand.Name = "txtCommand";
             this.txtCommand.Size = new System.Drawing.Size(186, 37);
             this.txtCommand.TabIndex = 1;
@@ -77,7 +77,7 @@ namespace TeamSeer
             // 
             // btnCmd
             // 
-            this.btnCmd.Location = new System.Drawing.Point(180, 80);
+            this.btnCmd.Location = new System.Drawing.Point(180, 71);
             this.btnCmd.Name = "btnCmd";
             this.btnCmd.Size = new System.Drawing.Size(113, 23);
             this.btnCmd.TabIndex = 2;
@@ -87,7 +87,7 @@ namespace TeamSeer
             // 
             // txtX
             // 
-            this.txtX.Location = new System.Drawing.Point(89, 162);
+            this.txtX.Location = new System.Drawing.Point(89, 167);
             this.txtX.Name = "txtX";
             this.txtX.Size = new System.Drawing.Size(84, 20);
             this.txtX.TabIndex = 4;
@@ -96,7 +96,7 @@ namespace TeamSeer
             // 
             // txtY
             // 
-            this.txtY.Location = new System.Drawing.Point(211, 162);
+            this.txtY.Location = new System.Drawing.Point(211, 167);
             this.txtY.Name = "txtY";
             this.txtY.Size = new System.Drawing.Size(81, 20);
             this.txtY.TabIndex = 5;
@@ -106,7 +106,7 @@ namespace TeamSeer
             // chkMouseLeft
             // 
             this.chkMouseLeft.AutoSize = true;
-            this.chkMouseLeft.Location = new System.Drawing.Point(58, 185);
+            this.chkMouseLeft.Location = new System.Drawing.Point(58, 200);
             this.chkMouseLeft.Name = "chkMouseLeft";
             this.chkMouseLeft.Size = new System.Drawing.Size(71, 17);
             this.chkMouseLeft.TabIndex = 6;
@@ -116,7 +116,7 @@ namespace TeamSeer
             // chkMouseRight
             // 
             this.chkMouseRight.AutoSize = true;
-            this.chkMouseRight.Location = new System.Drawing.Point(133, 185);
+            this.chkMouseRight.Location = new System.Drawing.Point(133, 200);
             this.chkMouseRight.Name = "chkMouseRight";
             this.chkMouseRight.Size = new System.Drawing.Size(77, 17);
             this.chkMouseRight.TabIndex = 7;
@@ -126,7 +126,7 @@ namespace TeamSeer
             // chkDoubleClick
             // 
             this.chkDoubleClick.AutoSize = true;
-            this.chkDoubleClick.Location = new System.Drawing.Point(211, 185);
+            this.chkDoubleClick.Location = new System.Drawing.Point(211, 200);
             this.chkDoubleClick.Name = "chkDoubleClick";
             this.chkDoubleClick.Size = new System.Drawing.Size(85, 17);
             this.chkDoubleClick.TabIndex = 8;
@@ -135,7 +135,7 @@ namespace TeamSeer
             // 
             // btnClick
             // 
-            this.btnClick.Location = new System.Drawing.Point(58, 208);
+            this.btnClick.Location = new System.Drawing.Point(58, 231);
             this.btnClick.Name = "btnClick";
             this.btnClick.Size = new System.Drawing.Size(114, 23);
             this.btnClick.TabIndex = 9;
@@ -145,7 +145,7 @@ namespace TeamSeer
             // 
             // txtWindowName
             // 
-            this.txtWindowName.Location = new System.Drawing.Point(107, 112);
+            this.txtWindowName.Location = new System.Drawing.Point(107, 108);
             this.txtWindowName.Name = "txtWindowName";
             this.txtWindowName.Size = new System.Drawing.Size(185, 20);
             this.txtWindowName.TabIndex = 10;
@@ -153,7 +153,7 @@ namespace TeamSeer
             // 
             // txtControlClassName
             // 
-            this.txtControlClassName.Location = new System.Drawing.Point(107, 136);
+            this.txtControlClassName.Location = new System.Drawing.Point(107, 137);
             this.txtControlClassName.Name = "txtControlClassName";
             this.txtControlClassName.Size = new System.Drawing.Size(186, 20);
             this.txtControlClassName.TabIndex = 11;
@@ -161,7 +161,7 @@ namespace TeamSeer
             // 
             // btnClickVaoControl
             // 
-            this.btnClickVaoControl.Location = new System.Drawing.Point(180, 208);
+            this.btnClickVaoControl.Location = new System.Drawing.Point(180, 231);
             this.btnClickVaoControl.Name = "btnClickVaoControl";
             this.btnClickVaoControl.Size = new System.Drawing.Size(112, 23);
             this.btnClickVaoControl.TabIndex = 12;
@@ -171,7 +171,7 @@ namespace TeamSeer
             // 
             // txtTextSend
             // 
-            this.txtTextSend.Location = new System.Drawing.Point(95, 267);
+            this.txtTextSend.Location = new System.Drawing.Point(95, 297);
             this.txtTextSend.Name = "txtTextSend";
             this.txtTextSend.Size = new System.Drawing.Size(196, 20);
             this.txtTextSend.TabIndex = 13;
@@ -179,7 +179,7 @@ namespace TeamSeer
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(58, 298);
+            this.button1.Location = new System.Drawing.Point(58, 326);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 23);
             this.button1.TabIndex = 14;
@@ -189,7 +189,7 @@ namespace TeamSeer
             // 
             // btnSendMultikey
             // 
-            this.btnSendMultikey.Location = new System.Drawing.Point(179, 298);
+            this.btnSendMultikey.Location = new System.Drawing.Point(179, 326);
             this.btnSendMultikey.Name = "btnSendMultikey";
             this.btnSendMultikey.Size = new System.Drawing.Size(112, 23);
             this.btnSendMultikey.TabIndex = 15;
@@ -200,7 +200,7 @@ namespace TeamSeer
             // btnSetText
             // 
             this.btnSetText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetText.Location = new System.Drawing.Point(179, 328);
+            this.btnSetText.Location = new System.Drawing.Point(179, 357);
             this.btnSetText.Name = "btnSetText";
             this.btnSetText.Size = new System.Drawing.Size(109, 23);
             this.btnSetText.TabIndex = 16;
@@ -211,7 +211,7 @@ namespace TeamSeer
             // btnSendClickOnControl
             // 
             this.btnSendClickOnControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSendClickOnControl.Location = new System.Drawing.Point(58, 237);
+            this.btnSendClickOnControl.Location = new System.Drawing.Point(58, 262);
             this.btnSendClickOnControl.Name = "btnSendClickOnControl";
             this.btnSendClickOnControl.Size = new System.Drawing.Size(135, 23);
             this.btnSendClickOnControl.TabIndex = 17;
@@ -222,7 +222,7 @@ namespace TeamSeer
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 270);
+            this.label1.Location = new System.Drawing.Point(58, 300);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 18;
@@ -231,7 +231,7 @@ namespace TeamSeer
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 165);
+            this.label2.Location = new System.Drawing.Point(58, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 13);
             this.label2.TabIndex = 19;
@@ -240,7 +240,7 @@ namespace TeamSeer
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(188, 165);
+            this.label3.Location = new System.Drawing.Point(188, 170);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(17, 13);
             this.label3.TabIndex = 20;
@@ -249,7 +249,7 @@ namespace TeamSeer
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(58, 139);
+            this.label4.Location = new System.Drawing.Point(58, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 21;
@@ -258,7 +258,7 @@ namespace TeamSeer
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(58, 115);
+            this.label5.Location = new System.Drawing.Point(58, 111);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 22;
@@ -267,7 +267,7 @@ namespace TeamSeer
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(58, 37);
+            this.label7.Location = new System.Drawing.Point(58, 22);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(34, 13);
             this.label7.TabIndex = 24;
@@ -276,7 +276,7 @@ namespace TeamSeer
             // btnClickToaDo
             // 
             this.btnClickToaDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClickToaDo.Location = new System.Drawing.Point(199, 238);
+            this.btnClickToaDo.Location = new System.Drawing.Point(199, 263);
             this.btnClickToaDo.Name = "btnClickToaDo";
             this.btnClickToaDo.Size = new System.Drawing.Size(92, 23);
             this.btnClickToaDo.TabIndex = 25;
@@ -287,7 +287,7 @@ namespace TeamSeer
             // btnSendKeyNgam
             // 
             this.btnSendKeyNgam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSendKeyNgam.Location = new System.Drawing.Point(61, 327);
+            this.btnSendKeyNgam.Location = new System.Drawing.Point(58, 357);
             this.btnSendKeyNgam.Name = "btnSendKeyNgam";
             this.btnSendKeyNgam.Size = new System.Drawing.Size(109, 23);
             this.btnSendKeyNgam.TabIndex = 26;
@@ -298,7 +298,7 @@ namespace TeamSeer
             // btnFindImage
             // 
             this.btnFindImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFindImage.Location = new System.Drawing.Point(61, 357);
+            this.btnFindImage.Location = new System.Drawing.Point(61, 389);
             this.btnFindImage.Name = "btnFindImage";
             this.btnFindImage.Size = new System.Drawing.Size(227, 23);
             this.btnFindImage.TabIndex = 27;
@@ -310,7 +310,7 @@ namespace TeamSeer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 403);
+            this.ClientSize = new System.Drawing.Size(336, 441);
             this.Controls.Add(this.btnFindImage);
             this.Controls.Add(this.btnSendKeyNgam);
             this.Controls.Add(this.btnClickToaDo);

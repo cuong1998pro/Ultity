@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZingMp3CrawData", "ZingMp3C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamSeer", "TeamSeer\TeamSeer.csproj", "{272872AA-7A69-4793-8837-755F3D5B47E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExpress", "DevExpress\DevExpress.csproj", "{52665723-5A27-4DAB-BAF9-7D10E47B7CFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxPlay", "DxPlay\DxPlay.csproj", "{5CAC6159-D40A-45A7-8D4A-0314FD30A6B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +71,14 @@ Global
 		{272872AA-7A69-4793-8837-755F3D5B47E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{272872AA-7A69-4793-8837-755F3D5B47E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{272872AA-7A69-4793-8837-755F3D5B47E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52665723-5A27-4DAB-BAF9-7D10E47B7CFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52665723-5A27-4DAB-BAF9-7D10E47B7CFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52665723-5A27-4DAB-BAF9-7D10E47B7CFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52665723-5A27-4DAB-BAF9-7D10E47B7CFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CAC6159-D40A-45A7-8D4A-0314FD30A6B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CAC6159-D40A-45A7-8D4A-0314FD30A6B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CAC6159-D40A-45A7-8D4A-0314FD30A6B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CAC6159-D40A-45A7-8D4A-0314FD30A6B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
