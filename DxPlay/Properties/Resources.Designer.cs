@@ -61,11 +61,74 @@ namespace DxPlay.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to cookie.txt.
+        /// </summary>
+        internal static string CookieFile {
+            get {
+                return ResourceManager.GetString("CookieFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://www.xvideos.com/history/.
+        /// </summary>
+        internal static string HistoryUrl {
+            get {
+                return ResourceManager.GetString("HistoryUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to https://www.xvideos.com.
         /// </summary>
         internal static string HomeUrl {
             get {
                 return ResourceManager.GetString("HomeUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to www.xvideos.com.
+        /// </summary>
+        internal static string Host {
+            get {
+                return ResourceManager.GetString("Host", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://www.xvideos.com/account/signinform.
+        /// </summary>
+        internal static string LoginUrl {
+            get {
+                return ResourceManager.GetString("LoginUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://www.xvideos.com/favorite/69855543/cuong/.
+        /// </summary>
+        internal static string PlaylistUrl {
+            get {
+                return ResourceManager.GetString("PlaylistUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to proxy.txt.
+        /// </summary>
+        internal static string ProxyFile {
+            get {
+                return ResourceManager.GetString("ProxyFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://www.xvideos.com/.
+        /// </summary>
+        internal static string Referer {
+            get {
+                return ResourceManager.GetString("Referer", resourceCulture);
             }
         }
     }

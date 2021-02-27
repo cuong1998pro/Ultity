@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExpress", "DevExpress\De
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxPlay", "DxPlay\DxPlay.csproj", "{5CAC6159-D40A-45A7-8D4A-0314FD30A6B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaLuong", "DaLuong\DaLuong.csproj", "{FC609EDF-3625-4A94-A6B6-DD91B866D050}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{5CAC6159-D40A-45A7-8D4A-0314FD30A6B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CAC6159-D40A-45A7-8D4A-0314FD30A6B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CAC6159-D40A-45A7-8D4A-0314FD30A6B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC609EDF-3625-4A94-A6B6-DD91B866D050}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC609EDF-3625-4A94-A6B6-DD91B866D050}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC609EDF-3625-4A94-A6B6-DD91B866D050}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC609EDF-3625-4A94-A6B6-DD91B866D050}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

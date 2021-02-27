@@ -29,34 +29,31 @@ namespace DxPlay
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtHostAddress = new System.Windows.Forms.TextBox();
             this.txtPort = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.btnRenew = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cboProtocol = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pgUptime = new System.Windows.Forms.ProgressBar();
-            this.btnTestConnection = new System.Windows.Forms.Button();
-            this.txtSpeed = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtResponse = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtLastCheck = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.btnUseCookie = new System.Windows.Forms.Button();
+            this.btnHistory = new System.Windows.Forms.Button();
+            this.btnGetVideo = new System.Windows.Forms.Button();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
+            this.dgvVideo = new System.Windows.Forms.DataGridView();
+            this.Image = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Title = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Download = new System.Windows.Forms.DataGridViewLinkColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVideo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 22);
+            this.label1.Location = new System.Drawing.Point(33, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 0;
@@ -64,215 +61,161 @@ namespace DxPlay
             // 
             // txtHostAddress
             // 
-            this.txtHostAddress.Location = new System.Drawing.Point(110, 19);
+            this.txtHostAddress.Location = new System.Drawing.Point(100, 24);
             this.txtHostAddress.Name = "txtHostAddress";
-            this.txtHostAddress.Size = new System.Drawing.Size(142, 20);
+            this.txtHostAddress.Size = new System.Drawing.Size(182, 20);
             this.txtHostAddress.TabIndex = 1;
+            this.txtHostAddress.Text = "188.165.16.230";
             // 
             // txtPort
             // 
-            this.txtPort.Location = new System.Drawing.Point(110, 47);
+            this.txtPort.Location = new System.Drawing.Point(100, 52);
             this.txtPort.Name = "txtPort";
-            this.txtPort.Size = new System.Drawing.Size(142, 20);
+            this.txtPort.Size = new System.Drawing.Size(182, 20);
             this.txtPort.TabIndex = 3;
+            this.txtPort.Text = "3129";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 50);
+            this.label2.Location = new System.Drawing.Point(33, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Port:";
             // 
-            // txtUsername
+            // btnConnect
             // 
-            this.txtUsername.Location = new System.Drawing.Point(370, 21);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(142, 20);
-            this.txtUsername.TabIndex = 6;
-            this.txtUsername.Text = "cuong1998pro@gmail.com";
+            this.btnConnect.Location = new System.Drawing.Point(36, 84);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(111, 23);
+            this.btnConnect.TabIndex = 18;
+            this.btnConnect.Text = "Connect";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnTestConnection_Click);
             // 
-            // label3
+            // btnUseCookie
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(303, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Username:";
+            this.btnUseCookie.Location = new System.Drawing.Point(153, 84);
+            this.btnUseCookie.Name = "btnUseCookie";
+            this.btnUseCookie.Size = new System.Drawing.Size(111, 23);
+            this.btnUseCookie.TabIndex = 21;
+            this.btnUseCookie.Text = "Use cookie";
+            this.btnUseCookie.UseVisualStyleBackColor = true;
+            this.btnUseCookie.Click += new System.EventHandler(this.btnUseCookie_Click);
             // 
-            // txtPassword
+            // btnHistory
             // 
-            this.txtPassword.Location = new System.Drawing.Point(370, 47);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(142, 20);
-            this.txtPassword.TabIndex = 8;
+            this.btnHistory.Location = new System.Drawing.Point(270, 84);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(98, 23);
+            this.btnHistory.TabIndex = 23;
+            this.btnHistory.Text = "History";
+            this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
-            // label4
+            // btnGetVideo
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(303, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Password:";
+            this.btnGetVideo.Location = new System.Drawing.Point(374, 84);
+            this.btnGetVideo.Name = "btnGetVideo";
+            this.btnGetVideo.Size = new System.Drawing.Size(98, 23);
+            this.btnGetVideo.TabIndex = 24;
+            this.btnGetVideo.Text = "Get videos";
+            this.btnGetVideo.UseVisualStyleBackColor = true;
+            this.btnGetVideo.Click += new System.EventHandler(this.btnGetVideo_Click);
             // 
-            // btnLogin
+            // btnFilter
             // 
-            this.btnLogin.Location = new System.Drawing.Point(321, 80);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(83, 23);
-            this.btnLogin.TabIndex = 9;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnFilter.Location = new System.Drawing.Point(447, 24);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnFilter.TabIndex = 28;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = true;
             // 
-            // btnThoat
+            // radioButton1
             // 
-            this.btnThoat.Location = new System.Drawing.Point(410, 80);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(83, 23);
-            this.btnThoat.TabIndex = 12;
-            this.btnThoat.Text = "Close";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(309, 24);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(99, 17);
+            this.radioButton1.TabIndex = 29;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Chua download";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // btnRenew
+            // radioButton2
             // 
-            this.btnRenew.Location = new System.Drawing.Point(60, 209);
-            this.btnRenew.Name = "btnRenew";
-            this.btnRenew.Size = new System.Drawing.Size(93, 23);
-            this.btnRenew.TabIndex = 13;
-            this.btnRenew.Text = "Renew";
-            this.btnRenew.UseVisualStyleBackColor = true;
-            this.btnRenew.Click += new System.EventHandler(this.btnRenew_Click);
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(309, 53);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(88, 17);
+            this.radioButton2.TabIndex = 30;
+            this.radioButton2.Text = "Da download";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // imageList
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(43, 76);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Protocol:";
+            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imageList.ImageSize = new System.Drawing.Size(200, 100);
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // cboProtocol
+            // dgvVideo
             // 
-            this.cboProtocol.FormattingEnabled = true;
-            this.cboProtocol.Items.AddRange(new object[] {
-            "--- NULL ---",
-            "HTTP",
-            "HTTPS",
-            "SOCKS4",
-            "SOCKS5"});
-            this.cboProtocol.Location = new System.Drawing.Point(110, 73);
-            this.cboProtocol.Name = "cboProtocol";
-            this.cboProtocol.Size = new System.Drawing.Size(142, 21);
-            this.cboProtocol.TabIndex = 15;
+            this.dgvVideo.AllowUserToAddRows = false;
+            this.dgvVideo.AllowUserToDeleteRows = false;
+            this.dgvVideo.AllowUserToOrderColumns = true;
+            this.dgvVideo.BackgroundColor = System.Drawing.Color.White;
+            this.dgvVideo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVideo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Image,
+            this.Title,
+            this.Download});
+            this.dgvVideo.Location = new System.Drawing.Point(36, 131);
+            this.dgvVideo.Name = "dgvVideo";
+            this.dgvVideo.ReadOnly = true;
+            this.dgvVideo.RowTemplate.Height = 130;
+            this.dgvVideo.Size = new System.Drawing.Size(826, 452);
+            this.dgvVideo.TabIndex = 32;
             // 
-            // label6
+            // Image
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(44, 155);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 13);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Uptimes:";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Image.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Image.HeaderText = "Image";
+            this.Image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Image.Name = "Image";
+            this.Image.ReadOnly = true;
+            this.Image.Width = 300;
             // 
-            // pgUptime
+            // Title
             // 
-            this.pgUptime.Enabled = false;
-            this.pgUptime.Location = new System.Drawing.Point(110, 152);
-            this.pgUptime.Name = "pgUptime";
-            this.pgUptime.Size = new System.Drawing.Size(142, 19);
-            this.pgUptime.TabIndex = 17;
+            this.Title.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Title.HeaderText = "Title";
+            this.Title.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
             // 
-            // btnTestConnection
+            // Download
             // 
-            this.btnTestConnection.Location = new System.Drawing.Point(159, 209);
-            this.btnTestConnection.Name = "btnTestConnection";
-            this.btnTestConnection.Size = new System.Drawing.Size(93, 23);
-            this.btnTestConnection.TabIndex = 18;
-            this.btnTestConnection.Text = "Connect";
-            this.btnTestConnection.UseVisualStyleBackColor = true;
-            this.btnTestConnection.Click += new System.EventHandler(this.btnTestConnection_Click);
-            // 
-            // txtSpeed
-            // 
-            this.txtSpeed.Enabled = false;
-            this.txtSpeed.Location = new System.Drawing.Point(110, 100);
-            this.txtSpeed.Name = "txtSpeed";
-            this.txtSpeed.Size = new System.Drawing.Size(142, 20);
-            this.txtSpeed.TabIndex = 20;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(43, 103);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 13);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Speed:";
-            // 
-            // txtResponse
-            // 
-            this.txtResponse.Enabled = false;
-            this.txtResponse.Location = new System.Drawing.Point(110, 126);
-            this.txtResponse.Name = "txtResponse";
-            this.txtResponse.Size = new System.Drawing.Size(142, 20);
-            this.txtResponse.TabIndex = 22;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(43, 129);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 13);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Response:";
-            // 
-            // txtLastCheck
-            // 
-            this.txtLastCheck.Enabled = false;
-            this.txtLastCheck.Location = new System.Drawing.Point(110, 177);
-            this.txtLastCheck.Name = "txtLastCheck";
-            this.txtLastCheck.Size = new System.Drawing.Size(142, 20);
-            this.txtLastCheck.TabIndex = 24;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(43, 180);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 13);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Last check:";
+            this.Download.HeaderText = "Download";
+            this.Download.Name = "Download";
+            this.Download.ReadOnly = true;
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 259);
-            this.Controls.Add(this.txtLastCheck);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtResponse);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtSpeed);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.btnTestConnection);
-            this.Controls.Add(this.pgUptime);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.cboProtocol);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnRenew);
-            this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(900, 593);
+            this.Controls.Add(this.dgvVideo);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.btnFilter);
+            this.Controls.Add(this.btnGetVideo);
+            this.Controls.Add(this.btnHistory);
+            this.Controls.Add(this.btnUseCookie);
+            this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.txtPort);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtHostAddress);
@@ -281,6 +224,7 @@ namespace DxPlay
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DxPlay version 1";
             this.Load += new System.EventHandler(this.frmLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVideo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,24 +236,18 @@ namespace DxPlay
         private System.Windows.Forms.TextBox txtHostAddress;
         private System.Windows.Forms.TextBox txtPort;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnRenew;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cboProtocol;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ProgressBar pgUptime;
-        private System.Windows.Forms.Button btnTestConnection;
-        private System.Windows.Forms.TextBox txtSpeed;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtResponse;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtLastCheck;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.Button btnUseCookie;
+        private System.Windows.Forms.Button btnHistory;
+        private System.Windows.Forms.Button btnGetVideo;
+        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.ImageList imageList;
+        private System.Windows.Forms.DataGridView dgvVideo;
+        private System.Windows.Forms.DataGridViewImageColumn Image;
+        private System.Windows.Forms.DataGridViewLinkColumn Title;
+        private System.Windows.Forms.DataGridViewLinkColumn Download;
     }
 }
 
