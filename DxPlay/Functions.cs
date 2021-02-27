@@ -1,28 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using xNet;
 
 namespace DxPlay
 {
     public static class Functions
     {
-        public static HttpRequest http;
+        public static HttpClient http;
+        public static CookieContainer cookie;
+        public static WebProxy proxy;
 
         public static void Init()
         {
             try
             {
-                http = new HttpRequest();
-                http.Cookies = new CookieDictionary();
+                var handler = new HttpClientHandler();
+                handler.UseCookies = false;
+                handler.ClientCertificateOptions = ClientCertificateOption.Automatic;
+                handler.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
+                handler.AllowAutoRedirect = true;
+                handler.UseDefaultCredentials = false;
+                http = new HttpClient(handler);
+                http.BaseAddress = new Uri(Properties.Resources.HomeUrl);
                 MainInitHeader();
             }
             catch (Exception ex)
@@ -31,84 +38,69 @@ namespace DxPlay
             }
         }
 
-        public static void UseCookie(string cookie)
+        public static void UseCookie(string cookieString)
         {
-            http.Cookies = new CookieDictionary();
-            var items = cookie.Split(';');
-            foreach (var item in items)
-            {
-                var temp2 = item.Split('=');
-                if (temp2.Count() > 1)
-                {
-                    var field = temp2[0];
-                    var value = temp2[1];
-                    http.Cookies.Add(field, value);
-                }
-            }
+            http.DefaultRequestHeaders.Add("Cookie", cookieString);
         }
 
         public static void MainInitHeader()
         {
-            http.ClearAllHeaders();
-            http.AddHeader("Accept", "*/*");
-            http.AddField("Accept-Encoding", "gzip, deflate");
-            http.AddHeader("Accept-Language", "en-US");
-            http.AddField("Connection", "keep-alive");
-            http.AddField("Host", Properties.Resources.Host);
-            http.AddHeader("Referer", Properties.Resources.Referer);
-            http.AddHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0");
-            http.AddHeader("Upgrade-Insecure-Requests", "1");
+            http.DefaultRequestHeaders.Clear();
+            http.DefaultRequestHeaders.TryAddWithoutValidation("Accept", "*/*");
+            http.DefaultRequestHeaders.TryAddWithoutValidation("Accept-Encoding", "gzip, deflate");
+            http.DefaultRequestHeaders.TryAddWithoutValidation("Accept-Language", "en-US");
+            http.DefaultRequestHeaders.TryAddWithoutValidation("Connection", "keep-alive");
+            http.DefaultRequestHeaders.TryAddWithoutValidation("Host", Properties.Resources.Host);
+            http.DefaultRequestHeaders.TryAddWithoutValidation("Referer", Properties.Resources.Referer);
+            http.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0");
+            http.DefaultRequestHeaders.TryAddWithoutValidation("Upgrade-Insecure-Requests", "1");
         }
 
         public static void ResetHeader()
         {
-            http.ClearAllHeaders();
-            http.AddHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0");
+            http.DefaultRequestHeaders.Clear();
+            http.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0");
         }
 
         public static async Task<List<Video>> GetVideosFromUrl(string url, int index)
         {
             Func<object, List<Video>> func = (object obj) =>
-            {
-                dynamic temp = obj;
-                MessageBox.Show(temp.url + temp.index);
+           {
+               dynamic temp = obj;
 
-                List<Video> videos = new List<Video>();
-                string html = GetData(temp.url + temp.index);
+               List<Video> videos = new List<Video>();
 
-                string videoHtmlRegex = @"(?<=<div id=""video_).*?(?=</script>)";
-                string imageRegex = @"(?<=""><img src=""https://static-l3.xvideos-cdn.com/img/lightbox/lightbox-blank.gif"" data-src="").*?(?="" data-idcdn)";
-                string linkRegex = @"(?<=""><div class=""thumb-inside""><div class=""thumb""><a href=""/).*?(?=""><img)";
-                string titleRegex = @"(?<="" title="").*?(?="")";
+               string html = GetData(temp.url + temp.index);
 
-                var htmlVideos = Regex.Matches(html, videoHtmlRegex);
+               string videoHtmlRegex = @"(?<=<div id=""video_).*?(?=</script>)";
+               string imageRegex = @"(?<=""><img src=""https://static-l3.xvideos-cdn.com/img/lightbox/lightbox-blank.gif"" data-src="").*?(?="" data-idcdn)";
+               string linkRegex = @"(?<=""><div class=""thumb-inside""><div class=""thumb""><a href=""/).*?(?=""><img)";
+               string titleRegex = @"(?<="" title="").*?(?="")";
 
-                foreach (var htmlVideo in htmlVideos)
-                {
-                    string image = Regex.Match(htmlVideo.ToString(), imageRegex).ToString();
-                    string link = Regex.Match(htmlVideo.ToString(), linkRegex).ToString();
-                    string title = Regex.Matches(htmlVideo.ToString(), titleRegex)[1].ToString();
-                    Video video = new Video()
-                    {
-                        ImageURL = image,
-                        DownloadLink = link,
-                        Title = title
-                    };
-                    videos.Add(video);
-                }
-                return videos;
-            };
+               var htmlVideos = Regex.Matches(html, videoHtmlRegex);
+
+               foreach (var htmlVideo in htmlVideos)
+               {
+                   string image = Regex.Match(htmlVideo.ToString(), imageRegex).ToString();
+                   string link = Regex.Match(htmlVideo.ToString(), linkRegex).ToString();
+                   string title = Regex.Matches(htmlVideo.ToString(), titleRegex)[1].ToString();
+                   Video video = new Video()
+                   {
+                       ImageURL = image,
+                       DownloadLink = link,
+                       Title = title
+                   };
+                   videos.Add(video);
+               }
+               return videos;
+           };
 
             Task<List<Video>> task = new Task<List<Video>>(func, new { url = url, index = index });
             task.Start();
             await task;
-
-            var result = task.Result;
-            //Them video to datagrid view
-            return result;
+            var videoResult = task.Result;
+            return videoResult;
         }
-
-       
 
         public static int GetVideoCount(string html)
         {
@@ -117,20 +109,10 @@ namespace DxPlay
             return int.Parse(number);
         }
 
-        public static int GetHistoryCount()
-        {
-            var url = Properties.Resources.HistoryUrl + "0";
-            var html = GetData(url);
-            return GetVideoCount(html);
-        }
-
         public static void UseProxy(string host, string port)
         {
-            http.Proxy = HttpProxyClient.Parse(host + ":" + port);
-            ResetHeader();
-            var html = GetData(Properties.Resources.HomeUrl);
-            if (string.IsNullOrEmpty(html)) return;
-            MessageBox.Show("Ket noi thanh cong");
+            proxy = new WebProxy(string.Format("{0}:{1}", host, port), false);
+            MessageBox.Show("dung proxy thanh cong");
         }
 
         private static string EncodeBase64(string input)
@@ -145,30 +127,8 @@ namespace DxPlay
 
         public static string GetData(string url)
         {
-            try
-            {
-                var html = WebUtility.HtmlDecode(http.Get(url).ToString());
-                return html;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(url + "\n" + ex.ToString(), "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return string.Empty;
-            }
-        }
-
-        public static string PostData(string url, string data, string contentType)
-        {
-            try
-            {
-                var html = WebUtility.HtmlDecode(http.Post(url, data, contentType).ToString());
-                return html;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return string.Empty;
-            }
+            var result = WebUtility.HtmlDecode(http.GetStringAsync(url).Result);
+            return result;
         }
 
         public static void WriteDataToHtml(string content, string outputFilename)

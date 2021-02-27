@@ -18,33 +18,37 @@ namespace DxPlay
             Functions.Init();
         }
 
-        private void btnTestConnection_Click(object sender, EventArgs e)
+        private async void btnTestConnection_Click(object sender, EventArgs e)
         {
-            var host = txtHostAddress.Text;
-            var port = txtPort.Text;
-            var proxyPath = Properties.Resources.ProxyFile;
-            if (File.Exists(proxyPath))
-            {
-                List<string> proxy = File.ReadLines(proxyPath).ToList();
-                if (proxy.Count == 3)
-                {
-                    var dateUpdate = DateTime.Parse(proxy[0]);
-                    if (DateTime.Now.Subtract(dateUpdate).Hours <= 5)
-                    {
-                        return;
-                    }
-                }
-            }
-            StreamWriter sw = new StreamWriter(proxyPath, false);
-            sw.WriteLine(DateTime.Now);
-            sw.WriteLine(host);
-            sw.WriteLine(port);
-            sw.Close();
-            Functions.UseProxy(host, port);
+            //var host = txtHostAddress.Text;
+            //var port = txtPort.Text;
+            //var proxyPath = Properties.Resources.ProxyFile;
+            //if (File.Exists(proxyPath))
+            //{
+            //    List<string> proxy = File.ReadLines(proxyPath).ToList();
+            //    if (proxy.Count == 3)
+            //    {
+            //        var dateUpdate = DateTime.Parse(proxy[0]);
+            //        if (DateTime.Now.Subtract(dateUpdate).Hours <= 5)
+            //        {
+            //            return;
+            //        }
+            //    }
+            //}
+            //StreamWriter sw = new StreamWriter(proxyPath, false);
+            //sw.WriteLine(DateTime.Now);
+            //sw.WriteLine(host);
+            //sw.WriteLine(port);
+            //sw.Close();
+            //Functions.UseProxy(host, port);
+            var result = Functions.GetData("https://google.com");
+            MessageBox.Show(result);
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            
+
             var proxyFile = Properties.Resources.ProxyFile;
             if (File.Exists(proxyFile))
             {
@@ -103,12 +107,16 @@ namespace DxPlay
 
         private async Task GetHistory()
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
                 var task = Functions.GetVideosFromUrl(Properties.Resources.HistoryUrl, i);
+                await task;
+                var result = task.Result;
+                AddListToDatagrid(result);
             }
-            
         }
+
+
 
         private void AddListToDatagrid(List<Video> videos)
         {
