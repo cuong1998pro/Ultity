@@ -62,46 +62,7 @@ namespace DxPlay
             http.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0");
         }
 
-        public static async Task<List<Video>> GetVideosFromUrl(string url, int index)
-        {
-            Func<object, List<Video>> func = (object obj) =>
-           {
-               dynamic temp = obj;
-
-               List<Video> videos = new List<Video>();
-
-               string html = GetData(temp.url + temp.index);
-
-               string videoHtmlRegex = @"(?<=<div id=""video_).*?(?=</script>)";
-               string imageRegex = @"(?<=""><img src=""https://static-l3.xvideos-cdn.com/img/lightbox/lightbox-blank.gif"" data-src="").*?(?="" data-idcdn)";
-               string linkRegex = @"(?<=""><div class=""thumb-inside""><div class=""thumb""><a href=""/).*?(?=""><img)";
-               string titleRegex = @"(?<="" title="").*?(?="")";
-
-               var htmlVideos = Regex.Matches(html, videoHtmlRegex);
-
-               foreach (var htmlVideo in htmlVideos)
-               {
-                   string image = Regex.Match(htmlVideo.ToString(), imageRegex).ToString();
-                   string link = Regex.Match(htmlVideo.ToString(), linkRegex).ToString();
-                   string title = Regex.Matches(htmlVideo.ToString(), titleRegex)[1].ToString();
-                   Video video = new Video()
-                   {
-                       ImageURL = image,
-                       DownloadLink = link,
-                       Title = title
-                   };
-                   videos.Add(video);
-               }
-               return videos;
-           };
-
-            Task<List<Video>> task = new Task<List<Video>>(func, new { url = url, index = index });
-            task.Start();
-            await task;
-            var videoResult = task.Result;
-            return videoResult;
-        }
-
+       
         public static int GetVideoCount(string html)
         {
             var regex = @"(?<=class=""last-page"">).*?(?=</a></li><li><a href=""#1"" class=""no-page next-page"">)";
