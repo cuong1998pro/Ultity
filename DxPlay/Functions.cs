@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -15,8 +16,13 @@ namespace DxPlay
     public static class Functions
     {
         public static HttpClient http;
-        public static CookieContainer cookie;
         public static WebProxy proxy;
+
+        public static List<Video> history = new List<Video>();
+        public static List<Video> playlist = new List<Video>();
+        public static List<Video> blocked = new List<Video>();
+        public static List<Video> downloadList = new List<Video>();
+        public static List<Video> downloaded = new List<Video>();
 
         public static void Init()
         {
@@ -63,9 +69,10 @@ namespace DxPlay
         }
 
        
-        public static int GetVideoCount(string html)
+        public static int GetPageCount(string url)
         {
-            var regex = @"(?<=class=""last-page"">).*?(?=</a></li><li><a href=""#1"" class=""no-page next-page"">)";
+            var html = GetData(url+0);
+            var regex = @"(?<=last-page"">).*?(?=</a></li>)";
             string number = Regex.Match(html, regex).ToString();
             return int.Parse(number);
         }
@@ -187,9 +194,9 @@ namespace DxPlay
 
     public class Video
     {
-        public string ImageURL { get; set; }
+        public Bitmap Image { get; set; }
         public string Title { get; set; }
-        public string DownloadLink { get; set; }
+        public string Download { get; set; }
         public string PageIndex { get; set; }
     }
 
