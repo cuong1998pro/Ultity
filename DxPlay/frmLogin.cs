@@ -214,35 +214,40 @@ namespace DxPlay
             }));
         }
 
-        public async Task DownloadVideo(Video video, string selectedPath)
+        public async Task DownloadVideo(Video videoBefore, string selectedPath)
         {
-            if (!Functions.downloaded.Contains(video.VideoID))
+            if (!Functions.downloaded.Contains(videoBefore.VideoID))
             {
                 Action<object> action = (object param) =>
                 {
                     Video obj = (Video)param;
                     var url = Properties.Resources.DownloadUrl + obj.VideoID;
-                    string response = Functions.GetData(url);
-                    DownloadVideo download = JsonConvert.DeserializeObject<DownloadVideo>(response);
+                    string res = Functions.GetData(url);
+                    DownloadVideo download = JsonConvert.DeserializeObject<DownloadVideo>(res);
                     string downloadURL = download.URL;
-
-                    //download video
-                    string fileName = selectedPath + "\\video" + video.VideoID + ".mp4";
-                    using (var client = new WebClient())
+                    string fileName = selectedPath + "\\video" + obj.VideoID + ".mp4";
+                    if (!string.IsNullOrEmpty(downloadURL))
                     {
-                        client.DownloadFile(downloadURL, fileName);
+                        WebClient webClient = new WebClient();
+                        webClient.DownloadFileAsync(new Uri(downloadURL), fileName);
                     }
+                    else
+                    {
+                        MessageBox.Show("loi tai url");
+                    }
+                    //download video
+                   
                 };
 
-                Task task = new Task(action, video);
+                Task task = new Task(action, videoBefore);
                 task.Start();
                 await task;
                 StreamWriter dw = new StreamWriter("download.txt", true);
-                dw.WriteLine(video.VideoID);
+                dw.WriteLine(videoBefore.VideoID);
                 dw.Close();
                 lock (Functions.downloaded)
                 {
-                    Functions.downloaded += (video.VideoID + "\n");
+                    Functions.downloaded += (videoBefore.VideoID + "\n");
                 }
                 progressBar2.Value += 1;
             }
@@ -275,10 +280,10 @@ namespace DxPlay
             List<Task> totalTasks = new List<Task>();
             progressBar2.Maximum = dgvVideo.Rows.Count;
             progressBar2.Value = 0;
-            for (int i = 0; i < dgvVideo.Rows.Count; i += 20)
+            for (int i = 0; i < dgvVideo.Rows.Count; i += 5)
             {
                 List<Task> tasks = new List<Task>();
-                for (int j = i; j < i + 20; j++)
+                for (int j = i; j < i + 5; j++)
                 {
                     if (j >= dgvVideo.Rows.Count) { break; }
                     Video selected = (Video)(dgvVideo.Rows[j].DataBoundItem);

@@ -70,7 +70,7 @@ namespace DxPlay.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://www.xvideos.com/video-download/.
+        ///   Looks up a localized string similar to https://www.xvideos3.com/video-download/.
         /// </summary>
         internal static string DownloadUrl {
             get {
@@ -79,7 +79,7 @@ namespace DxPlay.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://www.xvideos.com/history/.
+        ///   Looks up a localized string similar to https://www.xvideos3.com/history/.
         /// </summary>
         internal static string HistoryUrl {
             get {
@@ -88,7 +88,7 @@ namespace DxPlay.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://www.xvideos.com.
+        ///   Looks up a localized string similar to https://www.xvideos3.com.
         /// </summary>
         internal static string HomeUrl {
             get {
@@ -97,7 +97,7 @@ namespace DxPlay.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to www.xvideos.com.
+        ///   Looks up a localized string similar to www.xvideos3.com.
         /// </summary>
         internal static string Host {
             get {
@@ -106,7 +106,7 @@ namespace DxPlay.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://www.xvideos.com/account/signinform.
+        ///   Looks up a localized string similar to https://www.xvideos3.com/account/signinform.
         /// </summary>
         internal static string LoginUrl {
             get {
@@ -115,7 +115,7 @@ namespace DxPlay.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://www.xvideos.com/favorite/69855543/cuong/.
+        ///   Looks up a localized string similar to https://www.xvideos3.com/favorite/69855543/cuong/.
         /// </summary>
         internal static string PlaylistUrl {
             get {
@@ -133,7 +133,7 @@ namespace DxPlay.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://www.xvideos.com/.
+        ///   Looks up a localized string similar to https://www.xvideos3.com/.
         /// </summary>
         internal static string Referer {
             get {
