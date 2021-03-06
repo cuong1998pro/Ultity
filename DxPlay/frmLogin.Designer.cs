@@ -30,7 +30,7 @@ namespace DxPlay
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtHostAddress = new System.Windows.Forms.TextBox();
             this.txtPort = new System.Windows.Forms.TextBox();
@@ -44,10 +44,12 @@ namespace DxPlay
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.dgvVideo = new System.Windows.Forms.DataGridView();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.Image = new System.Windows.Forms.DataGridViewImageColumn();
             this.Title = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Download = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.btnDownload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVideo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,7 +129,7 @@ namespace DxPlay
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(447, 24);
+            this.btnFilter.Location = new System.Drawing.Point(414, 22);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(75, 23);
             this.btnFilter.TabIndex = 28;
@@ -182,21 +184,14 @@ namespace DxPlay
             this.dgvVideo.RowTemplate.Height = 130;
             this.dgvVideo.Size = new System.Drawing.Size(826, 452);
             this.dgvVideo.TabIndex = 32;
-            this.dgvVideo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVideo_CellContentClick);
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(543, 84);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(319, 23);
-            this.progressBar1.Step = 1;
-            this.progressBar1.TabIndex = 33;
+            this.dgvVideo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVideo_CellClick);
+            this.dgvVideo.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvVideo_CellMouseDown);
             // 
             // Image
             // 
             this.Image.DataPropertyName = "Image";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Image.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Image.DefaultCellStyle = dataGridViewCellStyle1;
             this.Image.HeaderText = "Image";
             this.Image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Image.Name = "Image";
@@ -214,16 +209,43 @@ namespace DxPlay
             // 
             // Download
             // 
-            this.Download.DataPropertyName = "Download";
+            this.Download.DataPropertyName = "URL";
             this.Download.HeaderText = "Download";
             this.Download.Name = "Download";
             this.Download.ReadOnly = true;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(543, 84);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(319, 23);
+            this.progressBar1.Step = 1;
+            this.progressBar1.TabIndex = 33;
+            // 
+            // progressBar2
+            // 
+            this.progressBar2.Location = new System.Drawing.Point(543, 50);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(319, 23);
+            this.progressBar2.TabIndex = 34;
+            // 
+            // btnDownload
+            // 
+            this.btnDownload.Location = new System.Drawing.Point(414, 52);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(75, 23);
+            this.btnDownload.TabIndex = 35;
+            this.btnDownload.Text = "Download";
+            this.btnDownload.UseVisualStyleBackColor = true;
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 593);
+            this.Controls.Add(this.btnDownload);
+            this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.dgvVideo);
             this.Controls.Add(this.radioButton2);
@@ -266,6 +288,8 @@ namespace DxPlay
         private System.Windows.Forms.DataGridViewImageColumn Image;
         private System.Windows.Forms.DataGridViewLinkColumn Title;
         private System.Windows.Forms.DataGridViewLinkColumn Download;
+        private System.Windows.Forms.ProgressBar progressBar2;
+        private System.Windows.Forms.Button btnDownload;
     }
 }
 

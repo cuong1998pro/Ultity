@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DxPlay
@@ -22,7 +20,7 @@ namespace DxPlay
         public static List<Video> playlist = new List<Video>();
         public static List<Video> blocked = new List<Video>();
         public static List<Video> downloadList = new List<Video>();
-        public static List<Video> downloaded = new List<Video>();
+        public static string downloaded = string.Empty;
 
         public static void Init()
         {
@@ -68,10 +66,9 @@ namespace DxPlay
             http.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0");
         }
 
-       
         public static int GetPageCount(string url)
         {
-            var html = GetData(url+0);
+            var html = GetData(url + 0);
             var regex = @"(?<=last-page"">).*?(?=</a></li>)";
             string number = Regex.Match(html, regex).ToString();
             return int.Parse(number);
@@ -196,8 +193,10 @@ namespace DxPlay
     {
         public Bitmap Image { get; set; }
         public string Title { get; set; }
-        public string Download { get; set; }
+        public string URL { get; set; }
+        public string VideoID { get; set; }
         public string PageIndex { get; set; }
+        public string DownloadUrl { get; set; }
     }
 
     public class Proxy
@@ -210,4 +209,18 @@ namespace DxPlay
         public int Uptime { get; set; }
         public string Protocol { get; set; }
     }
+
+
+
+
+
+    public class DownloadVideo
+    {
+        public bool LOGGED { get; set; }
+        public bool MP4HD_AVAILABLE { get; set; }
+        public bool MP4_4K_AVAILABLE { get; set; }
+        public string URL { get; set; }
+        public string URL_LOW { get; set; }
+    }
+
 }

@@ -1,10 +1,12 @@
 ﻿using Microsoft.VisualBasic;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,7 +21,7 @@ namespace DxPlay
             Functions.Init();
         }
 
-        private async void btnTestConnection_Click(object sender, EventArgs e)
+        private void btnTestConnection_Click(object sender, EventArgs e)
         {
             var host = txtHostAddress.Text;
             var port = txtPort.Text;
@@ -66,7 +68,19 @@ namespace DxPlay
             //}
             //Process.Start("http://www.freeproxylists.net/");
             //this.WindowState = FormWindowState.Minimized;
-
+            dgvVideo.AutoGenerateColumns = false;
+            if (File.Exists("download.txt"))
+            {
+                Functions.downloaded = File.ReadAllText("download.txt");
+            }
+            else
+            {
+                Functions.downloaded = string.Empty;
+            }
+            if (!Directory.Exists(Properties.Resources.DownloadFolder))
+            {
+                Directory.CreateDirectory(Properties.Resources.DownloadFolder);
+            }
             btnUseCookie_Click(null, null);
         }
 
@@ -95,20 +109,25 @@ namespace DxPlay
 
         private async void btnGetVideo_Click(object sender, EventArgs e)
         {
-          var task =  GetVideoURL(Functions.playlist, Properties.Resources.PlaylistUrl);
-            MessageBox.Show("Lam gi sau");
+            var task = GetVideoURL(Functions.playlist, Properties.Resources.PlaylistUrl);
+            await task;
+            //MessageBox.Show("Lam sau");
         }
 
         private async void btnHistory_Click(object sender, EventArgs e)
         {
-           var task = GetVideoURL(Functions.history, Properties.Resources.HistoryUrl);
-          
+            var task = GetVideoURL(Functions.history, Properties.Resources.HistoryUrl);
+            await task;
         }
 
         private async Task GetVideoURL(List<Video> videos, string url)
         {
-            int count = Functions.GetPageCount(url);
+            //int count = Functions.GetPageCount(url);
+            int count = 1;
+            dgvVideo.DataSource = null;
+            videos = new List<Video>();
             progressBar1.Maximum = count;
+            progressBar1.Value = 0;
             List<Task> totalTask = new List<Task>();
             for (int i = 0; i < count; i += 10)
             {
@@ -123,7 +142,9 @@ namespace DxPlay
                 await Task.WhenAll(tasks);
             }
             await Task.WhenAll(totalTask);
-            MessageBox.Show("Lay DL thanh cong. " + dgvVideo.Rows.Count + " ban ghi");
+            MessageBox.Show("Lay DL thanh cong. " + videos.Count + " ban ghi");
+
+            AddVideoToDatagrid(videos);
         }
 
         public async Task GetVideosFromUrl(List<Video> videos, string url, int index)
@@ -131,43 +152,57 @@ namespace DxPlay
             Action<object> action = (object obj) =>
             {
                 dynamic temp = obj;
-                //MessageBox.Show(temp.url + temp.index);
                 string html = Functions.GetData(temp.url + temp.index);
 
-                string videoHtmlRegex = @"(?<=<div id=""video_).*?(?=</script>)";
+                string videoHtmlRegex = @"(?<=<div id=""video).*?(?=</script>)";
                 string imageRegex = @"(?<=""><img src=""https://static-l3.xvideos-cdn.com/img/lightbox/lightbox-blank.gif"" data-src="").*?(?="" data-idcdn)";
                 string linkRegex = @"(?<=""><div class=""thumb-inside""><div class=""thumb""><a href=""/).*?(?=""><img)";
                 string titleRegex = @"(?<="" title="").*?(?="")";
 
-                var htmlVideos = Regex.Matches(html, videoHtmlRegex);
+                var htmlVideos = Regex.Matches(html, videoHtmlRegex, RegexOptions.Singleline);
+
+                //if(htmlVideos.Count < 27) { MessageBox.Show(temp.url + temp.index); }
 
                 foreach (var htmlVideo in htmlVideos)
                 {
-                    string image = Regex.Match(htmlVideo.ToString(), imageRegex).ToString();
-                    string link = Regex.Match(htmlVideo.ToString(), linkRegex).ToString();
-                    var matches = Regex.Matches(htmlVideo.ToString(), titleRegex);
+                    string image = Regex.Match(htmlVideo.ToString(), imageRegex, RegexOptions.Singleline).ToString();
+                    string link = Regex.Match(htmlVideo.ToString(), linkRegex, RegexOptions.Singleline).ToString();
+                    var matches = Regex.Matches(htmlVideo.ToString(), titleRegex, RegexOptions.Singleline);
                     string title = matches[matches.Count - 1].ToString();
+                    var videoUrl = link;
+                    string videoID = videoUrl.Substring(5, videoUrl.IndexOf("/") - 5);
+                    Bitmap bmp;
+                    try
+                    {
+                        WebRequest request = WebRequest.Create(image);
+                        WebResponse resp = request.GetResponse();
+                        Stream respStream = resp.GetResponseStream();
+                        bmp = new Bitmap(respStream);
+                        respStream.Dispose();
+                    }
+                    catch
+                    {
+                        bmp = new Bitmap("index.jpg");
+                    }
 
-                    System.Net.WebRequest request = System.Net.WebRequest.Create(image);
-                    System.Net.WebResponse resp = request.GetResponse();
-                    System.IO.Stream respStream = resp.GetResponseStream();
-                    Bitmap bmp = new Bitmap(respStream);
-                    respStream.Dispose();
                     Video video = new Video()
                     {
                         Image = bmp,
-                        Download = link,
+                        URL = link,
                         Title = title,
-                        PageIndex = temp.index + ""
+                        PageIndex = temp.index + "",
+                        VideoID = videoID
                     };
-                    videos.Add(video);
+                    lock (videos)
+                    {
+                        videos.Add(video);
+                    }
                 }
             };
 
             Task task = new Task(action, new { url = url, index = index });
             task.Start();
             await task;
-            AddVideoToDatagrid(videos);
             progressBar1.Value += 1;
         }
 
@@ -183,6 +218,91 @@ namespace DxPlay
             }));
         }
 
-      
+        public async Task DownloadVideo(Video video, string selectedPath)
+        {
+            if (!Functions.downloaded.Contains(video.VideoID))
+            {
+                Action<object> action = (object param) =>
+                {
+                    Video obj = (Video)param;
+                    var url = Properties.Resources.DownloadUrl + obj.VideoID;
+                    string response = Functions.GetData(url);
+                    DownloadVideo download = JsonConvert.DeserializeObject<DownloadVideo>(response);
+                    string downloadURL = download.URL;
+
+                    //download video
+                    string fileName = selectedPath + "\\video" + video.VideoID + ".mp4";
+                    using (var client = new WebClient())
+                    {
+                        client.DownloadFile(downloadURL, fileName);
+                    }
+                };
+
+                Task task = new Task(action, video);
+                task.Start();
+                await task;
+                StreamWriter dw = new StreamWriter("download.txt", true);
+                dw.WriteLine(video.VideoID);
+                dw.Close();
+                lock (Functions.downloaded)
+                {
+                    Functions.downloaded += (video.VideoID + "\n");
+                }
+                progressBar2.Value += 1;
+            }
+            else
+            {
+                progressBar2.Value += 1;
+            }
+        }
+
+        private async void dgvVideo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2)
+            {
+                List<Task> tasks = new List<Task>();
+                progressBar2.Maximum = 1;
+                progressBar2.Value = 0;
+                //Get item selected
+                Video selected = (Video)(dgvVideo.Rows[e.RowIndex].DataBoundItem);
+                tasks.Add(DownloadVideo(selected, Properties.Resources.DownloadFolder));
+                await Task.WhenAll(tasks);
+            }
+        }
+
+        private async void btnDownload_Click(object sender, EventArgs e)
+        {
+            await DonwloadAll();
+        }
+
+        public async Task DonwloadAll()
+        {
+            List<Task> totalTasks = new List<Task>();
+            progressBar2.Maximum = dgvVideo.Rows.Count;
+            progressBar2.Value = 0;
+            for (int i = 0; i < dgvVideo.Rows.Count; i += 20)
+            {
+                List<Task> tasks = new List<Task>();
+                for (int j = i; j < i + 20; j++)
+                {
+                    if (j >= dgvVideo.Rows.Count) { break; }
+                    Video selected = (Video)(dgvVideo.Rows[j].DataBoundItem);
+                    var task = DownloadVideo(selected, Properties.Resources.DownloadFolder);
+                    tasks.Add(task);
+                    totalTasks.Add(task);
+                }
+                await Task.WhenAll(tasks);
+            }
+            await Task.WhenAll(totalTasks);
+            MessageBox.Show("Donwload thanh cong");
+        }
+
+        private void dgvVideo_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right)
+            {
+                dgvVideo.Rows.RemoveAt(e.RowIndex);
+            }
+        }
     }
 }
