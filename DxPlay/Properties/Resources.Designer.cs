@@ -70,15 +70,6 @@ namespace DxPlay.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D:\Videos.
-        /// </summary>
-        internal static string DownloadFolder {
-            get {
-                return ResourceManager.GetString("DownloadFolder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to https://www.xvideos.com/video-download/.
         /// </summary>
         internal static string DownloadUrl {

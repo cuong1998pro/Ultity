@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -20,6 +21,8 @@ namespace DxPlay
             InitializeComponent();
             Functions.Init();
         }
+
+        private string downloadFolder = File.ReadAllText("download_folder.txt");
 
         private void btnTestConnection_Click(object sender, EventArgs e)
         {
@@ -77,9 +80,9 @@ namespace DxPlay
             {
                 Functions.downloaded = string.Empty;
             }
-            if (!Directory.Exists(Properties.Resources.DownloadFolder))
+            if (!Directory.Exists(downloadFolder))
             {
-                Directory.CreateDirectory(Properties.Resources.DownloadFolder);
+                Directory.CreateDirectory(downloadFolder);
             }
             btnUseCookie_Click(null, null);
         }
@@ -122,8 +125,7 @@ namespace DxPlay
 
         private async Task GetVideoURL(List<Video> videos, string url)
         {
-            //int count = Functions.GetPageCount(url);
-            int count = 1;
+            int count = Functions.GetPageCount(url);
             dgvVideo.DataSource = null;
             videos = new List<Video>();
             progressBar1.Maximum = count;
@@ -160,9 +162,6 @@ namespace DxPlay
                 string titleRegex = @"(?<="" title="").*?(?="")";
 
                 var htmlVideos = Regex.Matches(html, videoHtmlRegex, RegexOptions.Singleline);
-
-                //if(htmlVideos.Count < 27) { MessageBox.Show(temp.url + temp.index); }
-
                 foreach (var htmlVideo in htmlVideos)
                 {
                     string image = Regex.Match(htmlVideo.ToString(), imageRegex, RegexOptions.Singleline).ToString();
@@ -195,7 +194,8 @@ namespace DxPlay
                     };
                     lock (videos)
                     {
-                        videos.Add(video);
+                        if (!Functions.downloaded.Contains(video.VideoID))
+                            videos.Add(video);
                     }
                 }
             };
@@ -210,11 +210,7 @@ namespace DxPlay
         {
             dgvVideo.Invoke(new Action(() =>
             {
-                try
-                {
-                    dgvVideo.DataSource = videos;
-                }
-                catch { }
+                dgvVideo.DataSource = new BindingList<Video>(videos);
             }));
         }
 
@@ -263,9 +259,8 @@ namespace DxPlay
                 List<Task> tasks = new List<Task>();
                 progressBar2.Maximum = 1;
                 progressBar2.Value = 0;
-                //Get item selected
                 Video selected = (Video)(dgvVideo.Rows[e.RowIndex].DataBoundItem);
-                tasks.Add(DownloadVideo(selected, Properties.Resources.DownloadFolder));
+                tasks.Add(DownloadVideo(selected, downloadFolder));
                 await Task.WhenAll(tasks);
             }
         }
@@ -287,7 +282,7 @@ namespace DxPlay
                 {
                     if (j >= dgvVideo.Rows.Count) { break; }
                     Video selected = (Video)(dgvVideo.Rows[j].DataBoundItem);
-                    var task = DownloadVideo(selected, Properties.Resources.DownloadFolder);
+                    var task = DownloadVideo(selected, downloadFolder);
                     tasks.Add(task);
                     totalTasks.Add(task);
                 }
@@ -299,7 +294,7 @@ namespace DxPlay
 
         private void dgvVideo_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Right)
             {
                 dgvVideo.Rows.RemoveAt(e.RowIndex);
             }

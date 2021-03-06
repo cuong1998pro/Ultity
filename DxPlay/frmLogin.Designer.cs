@@ -44,12 +44,12 @@ namespace DxPlay
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.dgvVideo = new System.Windows.Forms.DataGridView();
-            this.Image = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Title = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Download = new System.Windows.Forms.DataGridViewLinkColumn();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.btnDownload = new System.Windows.Forms.Button();
+            this.Image = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Title = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Download = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVideo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,38 +181,11 @@ namespace DxPlay
             this.dgvVideo.Location = new System.Drawing.Point(36, 131);
             this.dgvVideo.Name = "dgvVideo";
             this.dgvVideo.ReadOnly = true;
-            this.dgvVideo.RowTemplate.Height = 130;
+            this.dgvVideo.RowTemplate.Height = 100;
             this.dgvVideo.Size = new System.Drawing.Size(826, 452);
             this.dgvVideo.TabIndex = 32;
             this.dgvVideo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVideo_CellClick);
             this.dgvVideo.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvVideo_CellMouseDown);
-            // 
-            // Image
-            // 
-            this.Image.DataPropertyName = "Image";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Image.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Image.HeaderText = "Image";
-            this.Image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Image.Name = "Image";
-            this.Image.ReadOnly = true;
-            this.Image.Width = 300;
-            // 
-            // Title
-            // 
-            this.Title.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Title.DataPropertyName = "Title";
-            this.Title.HeaderText = "Title";
-            this.Title.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.Title.Name = "Title";
-            this.Title.ReadOnly = true;
-            // 
-            // Download
-            // 
-            this.Download.DataPropertyName = "URL";
-            this.Download.HeaderText = "Download";
-            this.Download.Name = "Download";
-            this.Download.ReadOnly = true;
             // 
             // progressBar1
             // 
@@ -238,6 +211,33 @@ namespace DxPlay
             this.btnDownload.Text = "Download";
             this.btnDownload.UseVisualStyleBackColor = true;
             this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
+            // 
+            // Image
+            // 
+            this.Image.DataPropertyName = "Image";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Image.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Image.HeaderText = "Image";
+            this.Image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Image.Name = "Image";
+            this.Image.ReadOnly = true;
+            this.Image.Width = 200;
+            // 
+            // Title
+            // 
+            this.Title.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Title.DataPropertyName = "Title";
+            this.Title.HeaderText = "Title";
+            this.Title.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
+            // 
+            // Download
+            // 
+            this.Download.DataPropertyName = "URL";
+            this.Download.HeaderText = "Download";
+            this.Download.Name = "Download";
+            this.Download.ReadOnly = true;
             // 
             // frmLogin
             // 
@@ -285,11 +285,11 @@ namespace DxPlay
         private System.Windows.Forms.ImageList imageList;
         private System.Windows.Forms.DataGridView dgvVideo;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBar2;
+        private System.Windows.Forms.Button btnDownload;
         private System.Windows.Forms.DataGridViewImageColumn Image;
         private System.Windows.Forms.DataGridViewLinkColumn Title;
         private System.Windows.Forms.DataGridViewLinkColumn Download;
-        private System.Windows.Forms.ProgressBar progressBar2;
-        private System.Windows.Forms.Button btnDownload;
     }
 }
 
