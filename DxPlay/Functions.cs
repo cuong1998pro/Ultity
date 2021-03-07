@@ -18,7 +18,7 @@ namespace DxPlay
 
         public static List<Video> history = new List<Video>();
         public static List<Video> playlist = new List<Video>();
-        public static List<Video> blocked = new List<Video>();
+        public static string blocked = string.Empty;
         public static List<Video> downloadList = new List<Video>();
         public static string downloaded = string.Empty;
 

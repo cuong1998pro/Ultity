@@ -53,38 +53,22 @@ namespace DxPlay
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            //var proxyFile = Properties.Resources.ProxyFile;
-            //if (File.Exists(proxyFile))
-            //{
-            //    List<string> proxy = File.ReadLines(proxyFile).ToList();
-            //    if (proxy.Count == 3)
-            //    {
-            //        var dateTime = DateTime.Parse(proxy[0].ToString());
-            //        if (DateTime.Now.Subtract(dateTime).Hours <= 5)
-            //        {
-            //            txtHostAddress.Text = proxy[1].ToString();
-            //            txtPort.Text = proxy[2].ToString();
-            //            btnUseCookie_Click(null, null);
-            //            return;
-            //        }
-            //    }
-            //}
-            //Process.Start("http://www.freeproxylists.net/");
-            //this.WindowState = FormWindowState.Minimized;
             dgvVideo.AutoGenerateColumns = false;
-            if (File.Exists("download.txt"))
-            {
-                Functions.downloaded = File.ReadAllText("download.txt");
-            }
-            else
-            {
-                Functions.downloaded = string.Empty;
-            }
+            ReadFile("download.txt");
+            ReadFile("blocked.txt");
             if (!Directory.Exists(downloadFolder))
             {
                 Directory.CreateDirectory(downloadFolder);
             }
             btnUseCookie_Click(null, null);
+        }
+
+        public void ReadFile(string path)
+        {
+            if (File.Exists(path))
+            {
+                Functions.downloaded = File.ReadAllText(path);
+            }
         }
 
         private void btnUseCookie_Click(object sender, EventArgs e)
@@ -114,13 +98,20 @@ namespace DxPlay
         {
             var task = GetVideoURL(Functions.playlist, Properties.Resources.PlaylistUrl);
             await task;
-            //MessageBox.Show("Lam sau");
         }
 
         private async void btnHistory_Click(object sender, EventArgs e)
         {
-            var task = GetVideoURL(Functions.history, Properties.Resources.HistoryUrl);
-            await task;
+            try
+            {
+                var task = GetVideoURL(Functions.history, Properties.Resources.HistoryUrl);
+                await task;
+            }
+            catch
+            {
+                MessageBox.Show("Khong co lich su");
+            }
+           
         }
 
         private async Task GetVideoURL(List<Video> videos, string url)
@@ -157,7 +148,7 @@ namespace DxPlay
                 string html = Functions.GetData(temp.url + temp.index);
 
                 string videoHtmlRegex = @"(?<=<div id=""video).*?(?=</script>)";
-                string imageRegex = @"(?<=""><img src=""https://static-l3.xvideos-cdn.com/img/lightbox/lightbox-blank.gif"" data-src="").*?(?="" data-idcdn)";
+                string imageRegex = @"(?<=<img src=""https://www.xvideos3.com/static-files/img/lightbox/lightbox-blank.giff"" data-src="").*?(?="" data-idcdn)";
                 string linkRegex = @"(?<=""><div class=""thumb-inside""><div class=""thumb""><a href=""/).*?(?=""><img)";
                 string titleRegex = @"(?<="" title="").*?(?="")";
 
@@ -194,7 +185,7 @@ namespace DxPlay
                     };
                     lock (videos)
                     {
-                        if (!Functions.downloaded.Contains(video.VideoID))
+                        if (!Functions.downloaded.Contains(video.VideoID) && !Functions.blocked.Contains(video.VideoID))
                             videos.Add(video);
                     }
                 }
@@ -228,15 +219,27 @@ namespace DxPlay
                     string fileName = selectedPath + "\\video" + obj.VideoID + ".mp4";
                     if (!string.IsNullOrEmpty(downloadURL))
                     {
-                        WebClient webClient = new WebClient();
-                        webClient.DownloadFileAsync(new Uri(downloadURL), fileName);
+                        WebRequest request = WebRequest.Create(downloadURL);
+                        request.Timeout = int.MaxValue;
+                        WebResponse response = request.GetResponse();
+                        using (Stream responseStream = response.GetResponseStream())
+                        {
+                            using (Stream fileStream = File.OpenWrite(fileName))
+                            {
+                                try
+                                {
+                                    byte[] buffer = new byte[4096];
+                                    int bytesRead = responseStream.Read(buffer, 0, 4096);
+                                    while (bytesRead > 0)
+                                    {
+                                        fileStream.Write(buffer, 0, bytesRead);
+                                        bytesRead = responseStream.Read(buffer, 0, 4096);
+                                    }
+                                }
+                                catch { }
+                            }
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("loi tai url");
-                    }
-                    //download video
-                   
                 };
 
                 Task task = new Task(action, videoBefore);
@@ -280,13 +283,14 @@ namespace DxPlay
             List<Task> totalTasks = new List<Task>();
             progressBar2.Maximum = dgvVideo.Rows.Count;
             progressBar2.Value = 0;
-            for (int i = 0; i < dgvVideo.Rows.Count; i += 5)
+            for (int i = 0; i < dgvVideo.Rows.Count; i += 10)
             {
                 List<Task> tasks = new List<Task>();
-                for (int j = i; j < i + 5; j++)
+                for (int j = i; j < i + 10; j++)
                 {
                     if (j >= dgvVideo.Rows.Count) { break; }
                     Video selected = (Video)(dgvVideo.Rows[j].DataBoundItem);
+                    await Task.Delay(new TimeSpan(3000));
                     var task = DownloadVideo(selected, downloadFolder);
                     tasks.Add(task);
                     totalTasks.Add(task);
@@ -301,7 +305,15 @@ namespace DxPlay
         {
             if (e.Button == MouseButtons.Right)
             {
+                Video video = dgvVideo.Rows[e.RowIndex].DataBoundItem as Video;
                 dgvVideo.Rows.RemoveAt(e.RowIndex);
+                StreamWriter dw = new StreamWriter("blocked.txt", true);
+                dw.WriteLine(video.VideoID);
+                dw.Close();
+                lock (Functions.downloaded)
+                {
+                    Functions.downloaded += (video.VideoID + "\n");
+                }
             }
         }
     }
