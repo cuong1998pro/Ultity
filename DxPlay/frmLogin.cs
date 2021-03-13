@@ -6,7 +6,6 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -26,36 +25,14 @@ namespace DxPlay
 
         private void btnTestConnection_Click(object sender, EventArgs e)
         {
-            var host = txtHostAddress.Text;
-            var port = txtPort.Text;
-            var proxyPath = Properties.Resources.ProxyFile;
-            if (File.Exists(proxyPath))
-            {
-                List<string> proxy = File.ReadLines(proxyPath).ToList();
-                if (proxy.Count == 3)
-                {
-                    var dateUpdate = DateTime.Parse(proxy[0]);
-                    if (DateTime.Now.Subtract(dateUpdate).Hours <= 5)
-                    {
-                        return;
-                    }
-                }
-            }
-            StreamWriter sw = new StreamWriter(proxyPath, false);
-            sw.WriteLine(DateTime.Now);
-            sw.WriteLine(host);
-            sw.WriteLine(port);
-            sw.Close();
-            Functions.UseProxy(host, port);
-            var result = Functions.GetData("https://google.com");
-            MessageBox.Show(result);
+            Process.Start(Properties.Resources.HomeUrl);
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
             dgvVideo.AutoGenerateColumns = false;
-            ReadFile("download.txt");
-            ReadFile("blocked.txt");
+            Functions.downloaded = ReadFile("download.txt");
+            Functions.blocked = ReadFile("blocked.txt");
             if (!Directory.Exists(downloadFolder))
             {
                 Directory.CreateDirectory(downloadFolder);
@@ -63,12 +40,13 @@ namespace DxPlay
             btnUseCookie_Click(null, null);
         }
 
-        public void ReadFile(string path)
+        public string ReadFile(string path)
         {
             if (File.Exists(path))
             {
-                Functions.downloaded = File.ReadAllText(path);
+                return File.ReadAllText(path);
             }
+            return string.Empty;
         }
 
         private void btnUseCookie_Click(object sender, EventArgs e)
@@ -111,7 +89,6 @@ namespace DxPlay
             {
                 MessageBox.Show("Khong co lich su");
             }
-           
         }
 
         private async Task GetVideoURL(List<Video> videos, string url)
@@ -148,7 +125,7 @@ namespace DxPlay
                 string html = Functions.GetData(temp.url + temp.index);
 
                 string videoHtmlRegex = @"(?<=<div id=""video).*?(?=</script>)";
-                string imageRegex = @"(?<=<img src=""https://www.xvideos3.com/static-files/img/lightbox/lightbox-blank.giff"" data-src="").*?(?="" data-idcdn)";
+                string imageRegex = @"(?<=<img src=""https://www.xvideos3.com/static-files/img/lightbox/lightbox-blank.gif"" data-src="").*?(?="" data-idcdn)";
                 string linkRegex = @"(?<=""><div class=""thumb-inside""><div class=""thumb""><a href=""/).*?(?=""><img)";
                 string titleRegex = @"(?<="" title="").*?(?="")";
 
@@ -314,6 +291,10 @@ namespace DxPlay
                 {
                     Functions.downloaded += (video.VideoID + "\n");
                 }
+            }
+            else if (e.Button == MouseButtons.Left)
+            {
+                dgvVideo.Rows.RemoveAt(e.RowIndex);
             }
         }
     }
