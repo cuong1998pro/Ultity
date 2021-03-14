@@ -125,7 +125,7 @@ namespace DxPlay
                 string html = Functions.GetData(temp.url + temp.index);
 
                 string videoHtmlRegex = @"(?<=<div id=""video).*?(?=</script>)";
-                string imageRegex = @"(?<=<img src=""https://www.xvideos3.com/static-files/img/lightbox/lightbox-blank.gif"" data-src="").*?(?="" data-idcdn)";
+                string imageRegex = @"(?<=<img src=""https://www.xvideos3.com/static-files/img/lightbox/lightbox-blank.giff"" data-src="").*?(?="" data-idcdn)";
                 string linkRegex = @"(?<=""><div class=""thumb-inside""><div class=""thumb""><a href=""/).*?(?=""><img)";
                 string titleRegex = @"(?<="" title="").*?(?="")";
 
@@ -260,14 +260,14 @@ namespace DxPlay
             List<Task> totalTasks = new List<Task>();
             progressBar2.Maximum = dgvVideo.Rows.Count;
             progressBar2.Value = 0;
-            for (int i = 0; i < dgvVideo.Rows.Count; i += 10)
+            for (int i = 0; i < dgvVideo.Rows.Count; i += 15)
             {
                 List<Task> tasks = new List<Task>();
-                for (int j = i; j < i + 10; j++)
+                for (int j = i; j < i + 15; j++)
                 {
                     if (j >= dgvVideo.Rows.Count) { break; }
                     Video selected = (Video)(dgvVideo.Rows[j].DataBoundItem);
-                    await Task.Delay(new TimeSpan(3000));
+                    await Task.Delay(new TimeSpan(2000));
                     var task = DownloadVideo(selected, downloadFolder);
                     tasks.Add(task);
                     totalTasks.Add(task);
