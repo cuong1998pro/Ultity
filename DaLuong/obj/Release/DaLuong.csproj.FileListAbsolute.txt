@@ -1,0 +1,6 @@
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DaLuong\bin\Release\DaLuong.exe.config
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DaLuong\bin\Release\DaLuong.exe
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DaLuong\bin\Release\DaLuong.pdb
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DaLuong\obj\Release\DaLuong.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DaLuong\obj\Release\DaLuong.exe
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DaLuong\obj\Release\DaLuong.pdb

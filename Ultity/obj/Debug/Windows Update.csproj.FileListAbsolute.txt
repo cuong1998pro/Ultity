@@ -1,0 +1,7 @@
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\Ultity\bin\Debug\Windows Update.exe.config
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\Ultity\bin\Debug\Windows Update.exe
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\Ultity\bin\Debug\Windows Update.pdb
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\Ultity\obj\Debug\Windows Update.csprojAssemblyReference.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\Ultity\obj\Debug\Windows Update.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\Ultity\obj\Debug\Windows Update.exe
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\Ultity\obj\Debug\Windows Update.pdb

@@ -1,0 +1,15 @@
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\TeamSeer\bin\Release\TeamSeer.exe.config
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\TeamSeer\bin\Release\TeamSeer.exe
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\TeamSeer\bin\Release\TeamSeer.pdb
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\TeamSeer\bin\Release\KAutoHelper.dll
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\TeamSeer\bin\Release\Emgu.CV.World.dll
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\TeamSeer\bin\Release\KAutoHelper.dll.config
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\TeamSeer\bin\Release\Emgu.CV.World.xml
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\TeamSeer\obj\Release\TeamSeer.csprojAssemblyReference.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\TeamSeer\obj\Release\TeamSeer.frmMain.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\TeamSeer\obj\Release\TeamSeer.Properties.Resources.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\TeamSeer\obj\Release\TeamSeer.csproj.GenerateResource.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\TeamSeer\obj\Release\TeamSeer.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\TeamSeer\obj\Release\TeamSeer.csproj.CopyComplete
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\TeamSeer\obj\Release\TeamSeer.exe
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\TeamSeer\obj\Release\TeamSeer.pdb

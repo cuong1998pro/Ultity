@@ -1,0 +1,16 @@
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DxPlay\bin\Release\DxPlay.exe.config
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DxPlay\bin\Release\DxPlay.exe
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DxPlay\bin\Release\DxPlay.pdb
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DxPlay\bin\Release\Newtonsoft.Json.dll
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DxPlay\bin\Release\System.ServiceModel.Primitives.dll
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DxPlay\bin\Release\xNet.dll
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DxPlay\bin\Release\Newtonsoft.Json.xml
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DxPlay\bin\Release\System.ServiceModel.Primitives.pdb
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DxPlay\obj\Release\DxPlay.csprojAssemblyReference.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DxPlay\obj\Release\DxPlay.frmLogin.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DxPlay\obj\Release\DxPlay.Properties.Resources.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DxPlay\obj\Release\DxPlay.csproj.GenerateResource.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DxPlay\obj\Release\DxPlay.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DxPlay\obj\Release\DxPlay.csproj.CopyComplete
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DxPlay\obj\Release\DxPlay.exe
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DxPlay\obj\Release\DxPlay.pdb

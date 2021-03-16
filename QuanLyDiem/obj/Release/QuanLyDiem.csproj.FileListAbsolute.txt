@@ -1,0 +1,11 @@
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\QuanLyDiem\obj\Release\QuanLyDiem.csprojAssemblyReference.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\QuanLyDiem\obj\Release\QuanLyDiem.csproj.ResolveComReference.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\QuanLyDiem\obj\Release\QuanLyDiem.Forms.frmBangDiemChiTiet.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\QuanLyDiem\obj\Release\QuanLyDiem.Forms.frmLopSinhVien.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\QuanLyDiem\obj\Release\QuanLyDiem.Forms.frmMonDiemHP.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\QuanLyDiem\obj\Release\QuanLyDiem.Forms.frmThongKeSinhVienTheoLop.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\QuanLyDiem\obj\Release\QuanLyDiem.Forms.frmThongTinHeThong.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\QuanLyDiem\obj\Release\QuanLyDiem.frmMain.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\QuanLyDiem\obj\Release\QuanLyDiem.Properties.Resources.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\QuanLyDiem\obj\Release\QuanLyDiem.csproj.GenerateResource.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\QuanLyDiem\obj\Release\QuanLyDiem.csproj.CoreCompileInputs.cache

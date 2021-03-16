@@ -1,0 +1,6 @@
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawData\obj\Release\CrawData.csprojAssemblyReference.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawData\obj\Release\CrawData.frmMain.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawData\obj\Release\CrawData.frmEnterCapcha.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawData\obj\Release\CrawData.Properties.Resources.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawData\obj\Release\CrawData.csproj.GenerateResource.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawData\obj\Release\CrawData.csproj.CoreCompileInputs.cache

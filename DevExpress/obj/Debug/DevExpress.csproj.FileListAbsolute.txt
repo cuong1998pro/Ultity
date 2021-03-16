@@ -1,0 +1,6 @@
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DevExpress\obj\Debug\DevExpress.frmLayout.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DevExpress\obj\Debug\DevExpress.frmMain.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DevExpress\obj\Debug\DevExpress.frmSkin.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DevExpress\obj\Debug\DevExpress.Properties.Resources.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DevExpress\obj\Debug\DevExpress.frmWait.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\DevExpress\obj\Debug\DevExpress.csproj.GenerateResource.cache

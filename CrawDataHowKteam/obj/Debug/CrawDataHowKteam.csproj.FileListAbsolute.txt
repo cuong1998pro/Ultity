@@ -1,0 +1,15 @@
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawDataHowKteam\bin\Debug\CrawDataHowKteam.exe.config
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawDataHowKteam\bin\Debug\CrawDataHowKteam.exe
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawDataHowKteam\bin\Debug\CrawDataHowKteam.pdb
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawDataHowKteam\obj\Debug\CrawDataHowKteam.csprojAssemblyReference.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawDataHowKteam\obj\Debug\MainWindow.g.cs
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawDataHowKteam\obj\Debug\App.g.cs
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawDataHowKteam\obj\Debug\CrawDataHowKteam_MarkupCompile.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawDataHowKteam\obj\Debug\CrawDataHowKteam_MarkupCompile.lref
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawDataHowKteam\obj\Debug\MainWindow.baml
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawDataHowKteam\obj\Debug\CrawDataHowKteam.g.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawDataHowKteam\obj\Debug\CrawDataHowKteam.Properties.Resources.resources
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawDataHowKteam\obj\Debug\CrawDataHowKteam.csproj.GenerateResource.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawDataHowKteam\obj\Debug\CrawDataHowKteam.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawDataHowKteam\obj\Debug\CrawDataHowKteam.exe
+C:\Users\Dell\source\repos\cuong1998pro\Ultity\CrawDataHowKteam\obj\Debug\CrawDataHowKteam.pdb
