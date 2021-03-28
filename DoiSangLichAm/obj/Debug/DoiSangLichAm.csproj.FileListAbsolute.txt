@@ -1,0 +1,9 @@
+C:\repos\Ultity\DoiSangLichAm\bin\Debug\DoiSangLichAm.exe.config
+C:\repos\Ultity\DoiSangLichAm\bin\Debug\DoiSangLichAm.exe
+C:\repos\Ultity\DoiSangLichAm\bin\Debug\DoiSangLichAm.pdb
+C:\repos\Ultity\DoiSangLichAm\obj\Debug\DoiSangLichAm.frmMain.resources
+C:\repos\Ultity\DoiSangLichAm\obj\Debug\DoiSangLichAm.Properties.Resources.resources
+C:\repos\Ultity\DoiSangLichAm\obj\Debug\DoiSangLichAm.csproj.GenerateResource.cache
+C:\repos\Ultity\DoiSangLichAm\obj\Debug\DoiSangLichAm.csproj.CoreCompileInputs.cache
+C:\repos\Ultity\DoiSangLichAm\obj\Debug\DoiSangLichAm.exe
+C:\repos\Ultity\DoiSangLichAm\obj\Debug\DoiSangLichAm.pdb

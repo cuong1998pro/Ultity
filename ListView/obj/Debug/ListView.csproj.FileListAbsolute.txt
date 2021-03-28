@@ -1,0 +1,10 @@
+C:\repos\Ultity\ListView\bin\Debug\ListView.exe.config
+C:\repos\Ultity\ListView\bin\Debug\ListView.exe
+C:\repos\Ultity\ListView\bin\Debug\ListView.pdb
+C:\repos\Ultity\ListView\obj\Debug\ListView.csprojAssemblyReference.cache
+C:\repos\Ultity\ListView\obj\Debug\ListView.frmMain.resources
+C:\repos\Ultity\ListView\obj\Debug\ListView.Properties.Resources.resources
+C:\repos\Ultity\ListView\obj\Debug\ListView.csproj.GenerateResource.cache
+C:\repos\Ultity\ListView\obj\Debug\ListView.csproj.CoreCompileInputs.cache
+C:\repos\Ultity\ListView\obj\Debug\ListView.exe
+C:\repos\Ultity\ListView\obj\Debug\ListView.pdb

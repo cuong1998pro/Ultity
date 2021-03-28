@@ -1,0 +1,10 @@
+C:\repos\Ultity\Computer\bin\Debug\Computer.exe.config
+C:\repos\Ultity\Computer\bin\Debug\Computer.exe
+C:\repos\Ultity\Computer\bin\Debug\Computer.pdb
+C:\repos\Ultity\Computer\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\repos\Ultity\Computer\obj\Debug\Computer.Properties.Resources.resources
+C:\repos\Ultity\Computer\obj\Debug\Calculator.csproj.GenerateResource.cache
+C:\repos\Ultity\Computer\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\repos\Ultity\Computer\obj\Debug\Computer.exe
+C:\repos\Ultity\Computer\obj\Debug\Computer.pdb
+C:\repos\Ultity\Computer\obj\Debug\Computer.frmMain.resources

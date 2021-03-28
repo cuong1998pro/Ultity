@@ -1,0 +1,10 @@
+C:\repos\Ultity\DocMaHTML\bin\Debug\DocMaHTML.exe.config
+C:\repos\Ultity\DocMaHTML\bin\Debug\DocMaHTML.exe
+C:\repos\Ultity\DocMaHTML\bin\Debug\DocMaHTML.pdb
+C:\repos\Ultity\DocMaHTML\obj\Debug\DocMaHTML.csprojAssemblyReference.cache
+C:\repos\Ultity\DocMaHTML\obj\Debug\DocMaHTML.frmMain.resources
+C:\repos\Ultity\DocMaHTML\obj\Debug\DocMaHTML.Properties.Resources.resources
+C:\repos\Ultity\DocMaHTML\obj\Debug\DocMaHTML.csproj.GenerateResource.cache
+C:\repos\Ultity\DocMaHTML\obj\Debug\DocMaHTML.csproj.CoreCompileInputs.cache
+C:\repos\Ultity\DocMaHTML\obj\Debug\DocMaHTML.exe
+C:\repos\Ultity\DocMaHTML\obj\Debug\DocMaHTML.pdb

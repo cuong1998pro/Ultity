@@ -1,0 +1,9 @@
+C:\repos\Ultity\MaHoaMD5\bin\Debug\MaHoaMD5.exe.config
+C:\repos\Ultity\MaHoaMD5\bin\Debug\MaHoaMD5.exe
+C:\repos\Ultity\MaHoaMD5\bin\Debug\MaHoaMD5.pdb
+C:\repos\Ultity\MaHoaMD5\obj\Debug\MaHoaMD5.frmMain.resources
+C:\repos\Ultity\MaHoaMD5\obj\Debug\MaHoaMD5.Properties.Resources.resources
+C:\repos\Ultity\MaHoaMD5\obj\Debug\MaHoaMD5.csproj.GenerateResource.cache
+C:\repos\Ultity\MaHoaMD5\obj\Debug\MaHoaMD5.csproj.CoreCompileInputs.cache
+C:\repos\Ultity\MaHoaMD5\obj\Debug\MaHoaMD5.exe
+C:\repos\Ultity\MaHoaMD5\obj\Debug\MaHoaMD5.pdb

@@ -1,0 +1,7 @@
+C:\Users\private\source\repos\Ultity\Ultity\obj\Debug\Ultity.csprojAssemblyReference.cache
+C:\Users\private\source\repos\Ultity\Ultity\obj\Debug\Ultity.csproj.CoreCompileInputs.cache
+C:\Users\private\source\repos\Ultity\Ultity\bin\Debug\Ultity.exe.config
+C:\Users\private\source\repos\Ultity\Ultity\bin\Debug\Ultity.exe
+C:\Users\private\source\repos\Ultity\Ultity\bin\Debug\Ultity.pdb
+C:\Users\private\source\repos\Ultity\Ultity\obj\Debug\Ultity.exe
+C:\Users\private\source\repos\Ultity\Ultity\obj\Debug\Ultity.pdb

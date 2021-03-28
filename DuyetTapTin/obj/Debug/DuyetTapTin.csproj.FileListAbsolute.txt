@@ -1,0 +1,9 @@
+C:\repos\Ultity\DuyetTapTin\bin\Debug\DuyetTapTin.exe.config
+C:\repos\Ultity\DuyetTapTin\bin\Debug\DuyetTapTin.exe
+C:\repos\Ultity\DuyetTapTin\bin\Debug\DuyetTapTin.pdb
+C:\repos\Ultity\DuyetTapTin\obj\Debug\DuyetTapTin.frmMain.resources
+C:\repos\Ultity\DuyetTapTin\obj\Debug\DuyetTapTin.Properties.Resources.resources
+C:\repos\Ultity\DuyetTapTin\obj\Debug\DuyetTapTin.csproj.GenerateResource.cache
+C:\repos\Ultity\DuyetTapTin\obj\Debug\DuyetTapTin.csproj.CoreCompileInputs.cache
+C:\repos\Ultity\DuyetTapTin\obj\Debug\DuyetTapTin.exe
+C:\repos\Ultity\DuyetTapTin\obj\Debug\DuyetTapTin.pdb

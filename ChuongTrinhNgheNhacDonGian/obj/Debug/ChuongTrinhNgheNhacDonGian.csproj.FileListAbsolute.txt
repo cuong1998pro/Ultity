@@ -1,0 +1,14 @@
+C:\repos\Ultity\ChuongTrinhNgheNhacDonGian\bin\Debug\ChuongTrinhNgheNhacDonGian.exe.config
+C:\repos\Ultity\ChuongTrinhNgheNhacDonGian\bin\Debug\ChuongTrinhNgheNhacDonGian.exe
+C:\repos\Ultity\ChuongTrinhNgheNhacDonGian\bin\Debug\ChuongTrinhNgheNhacDonGian.pdb
+C:\repos\Ultity\ChuongTrinhNgheNhacDonGian\bin\Debug\Interop.WMPLib.dll
+C:\repos\Ultity\ChuongTrinhNgheNhacDonGian\bin\Debug\AxInterop.WMPLib.dll
+C:\repos\Ultity\ChuongTrinhNgheNhacDonGian\obj\Debug\Interop.WMPLib.dll
+C:\repos\Ultity\ChuongTrinhNgheNhacDonGian\obj\Debug\AxInterop.WMPLib.dll
+C:\repos\Ultity\ChuongTrinhNgheNhacDonGian\obj\Debug\ChuongTrinhNgheNhacDonGian.csproj.ResolveComReference.cache
+C:\repos\Ultity\ChuongTrinhNgheNhacDonGian\obj\Debug\ChuongTrinhNgheNhacDonGian.frmMain.resources
+C:\repos\Ultity\ChuongTrinhNgheNhacDonGian\obj\Debug\ChuongTrinhNgheNhacDonGian.Properties.Resources.resources
+C:\repos\Ultity\ChuongTrinhNgheNhacDonGian\obj\Debug\ChuongTrinhNgheNhacDonGian.csproj.GenerateResource.cache
+C:\repos\Ultity\ChuongTrinhNgheNhacDonGian\obj\Debug\ChuongTrinhNgheNhacDonGian.csproj.CoreCompileInputs.cache
+C:\repos\Ultity\ChuongTrinhNgheNhacDonGian\obj\Debug\ChuongTrinhNgheNhacDonGian.exe
+C:\repos\Ultity\ChuongTrinhNgheNhacDonGian\obj\Debug\ChuongTrinhNgheNhacDonGian.pdb

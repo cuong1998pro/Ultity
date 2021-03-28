@@ -1,0 +1,9 @@
+C:\repos\Ultity\KetNoiSql\bin\Debug\KetNoiSql.exe.config
+C:\repos\Ultity\KetNoiSql\bin\Debug\KetNoiSql.exe
+C:\repos\Ultity\KetNoiSql\bin\Debug\KetNoiSql.pdb
+C:\repos\Ultity\KetNoiSql\obj\Debug\KetNoiSql.frmKetNoiSql.resources
+C:\repos\Ultity\KetNoiSql\obj\Debug\KetNoiSql.Properties.Resources.resources
+C:\repos\Ultity\KetNoiSql\obj\Debug\KetNoiSql.csproj.GenerateResource.cache
+C:\repos\Ultity\KetNoiSql\obj\Debug\KetNoiSql.csproj.CoreCompileInputs.cache
+C:\repos\Ultity\KetNoiSql\obj\Debug\KetNoiSql.exe
+C:\repos\Ultity\KetNoiSql\obj\Debug\KetNoiSql.pdb

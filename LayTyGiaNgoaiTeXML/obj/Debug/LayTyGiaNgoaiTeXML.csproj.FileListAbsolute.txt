@@ -1,0 +1,9 @@
+C:\repos\Ultity\LayTyGiaNgoaiTeXML\bin\Debug\LayTyGiaNgoaiTeXML.exe.config
+C:\repos\Ultity\LayTyGiaNgoaiTeXML\bin\Debug\LayTyGiaNgoaiTeXML.exe
+C:\repos\Ultity\LayTyGiaNgoaiTeXML\bin\Debug\LayTyGiaNgoaiTeXML.pdb
+C:\repos\Ultity\LayTyGiaNgoaiTeXML\obj\Debug\LayTyGiaNgoaiTeXML.frmTyGia.resources
+C:\repos\Ultity\LayTyGiaNgoaiTeXML\obj\Debug\LayTyGiaNgoaiTeXML.Properties.Resources.resources
+C:\repos\Ultity\LayTyGiaNgoaiTeXML\obj\Debug\LayTyGiaNgoaiTeXML.csproj.GenerateResource.cache
+C:\repos\Ultity\LayTyGiaNgoaiTeXML\obj\Debug\LayTyGiaNgoaiTeXML.csproj.CoreCompileInputs.cache
+C:\repos\Ultity\LayTyGiaNgoaiTeXML\obj\Debug\LayTyGiaNgoaiTeXML.exe
+C:\repos\Ultity\LayTyGiaNgoaiTeXML\obj\Debug\LayTyGiaNgoaiTeXML.pdb

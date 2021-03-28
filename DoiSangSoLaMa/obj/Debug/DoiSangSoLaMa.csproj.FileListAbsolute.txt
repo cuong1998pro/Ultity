@@ -1,0 +1,10 @@
+C:\repos\Ultity\DoiSangSoLaMa\bin\Debug\DoiSangSoLaMa.exe.config
+C:\repos\Ultity\DoiSangSoLaMa\bin\Debug\DoiSangSoLaMa.exe
+C:\repos\Ultity\DoiSangSoLaMa\bin\Debug\DoiSangSoLaMa.pdb
+C:\repos\Ultity\DoiSangSoLaMa\obj\Debug\DoiSangSoLaMa.csprojAssemblyReference.cache
+C:\repos\Ultity\DoiSangSoLaMa\obj\Debug\DoiSangSoLaMa.frmMain.resources
+C:\repos\Ultity\DoiSangSoLaMa\obj\Debug\DoiSangSoLaMa.Properties.Resources.resources
+C:\repos\Ultity\DoiSangSoLaMa\obj\Debug\DoiSangSoLaMa.csproj.GenerateResource.cache
+C:\repos\Ultity\DoiSangSoLaMa\obj\Debug\DoiSangSoLaMa.csproj.CoreCompileInputs.cache
+C:\repos\Ultity\DoiSangSoLaMa\obj\Debug\DoiSangSoLaMa.exe
+C:\repos\Ultity\DoiSangSoLaMa\obj\Debug\DoiSangSoLaMa.pdb

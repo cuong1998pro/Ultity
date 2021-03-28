@@ -1,0 +1,10 @@
+C:\repos\Ultity\ChupHinhControl\bin\Debug\ChupHinhControl.exe.config
+C:\repos\Ultity\ChupHinhControl\bin\Debug\ChupHinhControl.exe
+C:\repos\Ultity\ChupHinhControl\bin\Debug\ChupHinhControl.pdb
+C:\repos\Ultity\ChupHinhControl\obj\Debug\ChupHinhControl.csprojAssemblyReference.cache
+C:\repos\Ultity\ChupHinhControl\obj\Debug\ChupHinhControl.Form1.resources
+C:\repos\Ultity\ChupHinhControl\obj\Debug\ChupHinhControl.Properties.Resources.resources
+C:\repos\Ultity\ChupHinhControl\obj\Debug\ChupHinhControl.csproj.GenerateResource.cache
+C:\repos\Ultity\ChupHinhControl\obj\Debug\ChupHinhControl.csproj.CoreCompileInputs.cache
+C:\repos\Ultity\ChupHinhControl\obj\Debug\ChupHinhControl.exe
+C:\repos\Ultity\ChupHinhControl\obj\Debug\ChupHinhControl.pdb

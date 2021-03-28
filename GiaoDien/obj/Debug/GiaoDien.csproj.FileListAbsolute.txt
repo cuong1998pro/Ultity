@@ -1,0 +1,20 @@
+C:\repos\Ultity\GiaoDien\bin\Debug\Cheat Megaman.exe.config
+C:\repos\Ultity\GiaoDien\bin\Debug\Cheat Megaman.exe
+C:\repos\Ultity\GiaoDien\bin\Debug\Cheat Megaman.pdb
+C:\repos\Ultity\GiaoDien\obj\Debug\GiaoDien.csprojAssemblyReference.cache
+C:\repos\Ultity\GiaoDien\obj\Debug\MainWindow.g.cs
+C:\repos\Ultity\GiaoDien\obj\Debug\App.g.cs
+C:\repos\Ultity\GiaoDien\obj\Debug\Cheat Megaman_MarkupCompile.cache
+C:\repos\Ultity\GiaoDien\obj\Debug\Cheat Megaman_MarkupCompile.lref
+C:\repos\Ultity\GiaoDien\obj\Debug\App.baml
+C:\repos\Ultity\GiaoDien\obj\Debug\MainWindow.baml
+C:\repos\Ultity\GiaoDien\obj\Debug\Cheat Megaman.g.resources
+C:\repos\Ultity\GiaoDien\obj\Debug\GiaoDien.Properties.Resources.resources
+C:\repos\Ultity\GiaoDien\obj\Debug\GiaoDien.csproj.GenerateResource.cache
+C:\repos\Ultity\GiaoDien\obj\Debug\GiaoDien.csproj.CoreCompileInputs.cache
+C:\repos\Ultity\GiaoDien\obj\Debug\Cheat Megaman.exe
+C:\repos\Ultity\GiaoDien\obj\Debug\Cheat Megaman.pdb
+C:\repos\Ultity\GiaoDien\obj\Debug\xamlResource\BaseResource.baml
+C:\repos\Ultity\GiaoDien\obj\Debug\xamlResource\TriggerResource.baml
+C:\repos\Ultity\GiaoDien\bin\Debug\KAutoHelper.dll
+C:\repos\Ultity\GiaoDien\obj\Debug\GiaoDien.csproj.CopyComplete

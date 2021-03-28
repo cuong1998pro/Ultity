@@ -1,0 +1,7 @@
+C:\Users\private\source\repos\Ultity\Ultity\obj\Release\Ultity.csproj.CoreCompileInputs.cache
+C:\Users\private\source\repos\Ultity\Ultity\obj\Release\Ultity.csprojAssemblyReference.cache
+C:\Users\private\source\repos\Ultity\Ultity\bin\Release\Windows Update.exe.config
+C:\Users\private\source\repos\Ultity\Ultity\bin\Release\Windows Update.exe
+C:\Users\private\source\repos\Ultity\Ultity\bin\Release\Windows Update.pdb
+C:\Users\private\source\repos\Ultity\Ultity\obj\Release\Windows Update.exe
+C:\Users\private\source\repos\Ultity\Ultity\obj\Release\Windows Update.pdb

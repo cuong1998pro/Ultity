@@ -1,0 +1,10 @@
+C:\repos\Ultity\KetNoiAccess\bin\Debug\KetNoiAccess.exe.config
+C:\repos\Ultity\KetNoiAccess\bin\Debug\KetNoiAccess.exe
+C:\repos\Ultity\KetNoiAccess\bin\Debug\KetNoiAccess.pdb
+C:\repos\Ultity\KetNoiAccess\obj\Debug\KetNoiAccess.csprojAssemblyReference.cache
+C:\repos\Ultity\KetNoiAccess\obj\Debug\KetNoiAccess.frmMatHang.resources
+C:\repos\Ultity\KetNoiAccess\obj\Debug\KetNoiAccess.Properties.Resources.resources
+C:\repos\Ultity\KetNoiAccess\obj\Debug\KetNoiAccess.csproj.GenerateResource.cache
+C:\repos\Ultity\KetNoiAccess\obj\Debug\KetNoiAccess.csproj.CoreCompileInputs.cache
+C:\repos\Ultity\KetNoiAccess\obj\Debug\KetNoiAccess.exe
+C:\repos\Ultity\KetNoiAccess\obj\Debug\KetNoiAccess.pdb

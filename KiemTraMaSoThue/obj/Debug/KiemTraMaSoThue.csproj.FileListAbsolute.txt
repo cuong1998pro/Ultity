@@ -1,0 +1,10 @@
+C:\repos\Ultity\KiemTraMaSoThue\bin\Debug\KiemTraMaSoThue.exe.config
+C:\repos\Ultity\KiemTraMaSoThue\bin\Debug\KiemTraMaSoThue.exe
+C:\repos\Ultity\KiemTraMaSoThue\bin\Debug\KiemTraMaSoThue.pdb
+C:\repos\Ultity\KiemTraMaSoThue\obj\Debug\KiemTraMaSoThue.csprojAssemblyReference.cache
+C:\repos\Ultity\KiemTraMaSoThue\obj\Debug\KiemTraMaSoThue.Form1.resources
+C:\repos\Ultity\KiemTraMaSoThue\obj\Debug\KiemTraMaSoThue.Properties.Resources.resources
+C:\repos\Ultity\KiemTraMaSoThue\obj\Debug\KiemTraMaSoThue.csproj.GenerateResource.cache
+C:\repos\Ultity\KiemTraMaSoThue\obj\Debug\KiemTraMaSoThue.csproj.CoreCompileInputs.cache
+C:\repos\Ultity\KiemTraMaSoThue\obj\Debug\KiemTraMaSoThue.exe
+C:\repos\Ultity\KiemTraMaSoThue\obj\Debug\KiemTraMaSoThue.pdb
