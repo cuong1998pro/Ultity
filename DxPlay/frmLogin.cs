@@ -188,40 +188,47 @@ namespace DxPlay
             {
                 Action<object> action = (object param) =>
                 {
-                    Video obj = (Video)param;
-                    var url = Properties.Resources.DownloadUrl + obj.VideoID;
-                    string res = Functions.GetData(url);
-                    DownloadVideo download = JsonConvert.DeserializeObject<DownloadVideo>(res);
-                    string downloadURL = download.URL;
-                    string fileName = selectedPath + "\\video" + obj.VideoID + ".mp4";
-                    if (!string.IsNullOrEmpty(downloadURL))
+                    try
                     {
-                        WebRequest request = WebRequest.Create(downloadURL);
-                        request.Timeout = int.MaxValue;
-                        WebResponse response = request.GetResponse();
-                        using (Stream responseStream = response.GetResponseStream())
+                        Video obj = (Video)param;
+                        var url = Properties.Resources.DownloadUrl + obj.VideoID;
+                        string res = Functions.GetData(url);
+                        DownloadVideo download = JsonConvert.DeserializeObject<DownloadVideo>(res);
+                        string downloadURL = download.URL;
+                        string fileName = selectedPath + "\\video" + obj.VideoID + ".mp4";
+                        if (!string.IsNullOrEmpty(downloadURL))
                         {
-                            using (Stream fileStream = File.OpenWrite(fileName))
+                            WebRequest request = WebRequest.Create(downloadURL);
+                            request.Timeout = int.MaxValue;
+                            WebResponse response = request.GetResponse();
+                            using (Stream responseStream = response.GetResponseStream())
                             {
-                                try
+                                using (Stream fileStream = File.OpenWrite(fileName))
                                 {
-                                    byte[] buffer = new byte[4096];
-                                    int bytesRead = responseStream.Read(buffer, 0, 4096);
-                                    while (bytesRead > 0)
+                                    try
                                     {
-                                        fileStream.Write(buffer, 0, bytesRead);
-                                        bytesRead = responseStream.Read(buffer, 0, 4096);
+                                        byte[] buffer = new byte[4096];
+                                        int bytesRead = responseStream.Read(buffer, 0, 4096);
+                                        while (bytesRead > 0)
+                                        {
+                                            fileStream.Write(buffer, 0, bytesRead);
+                                            bytesRead = responseStream.Read(buffer, 0, 4096);
+                                        }
                                     }
+                                    catch { }
                                 }
-                                catch { }
                             }
                         }
                     }
+                    catch { }
                 };
-
-                Task task = new Task(action, videoBefore);
-                task.Start();
-                await task;
+                try
+                {
+                    Task task = new Task(action, videoBefore);
+                    task.Start();
+                    await task;
+                }
+                catch { }
                 StreamWriter dw = new StreamWriter("download.txt", true);
                 dw.WriteLine(videoBefore.VideoID);
                 dw.Close();
@@ -265,12 +272,16 @@ namespace DxPlay
                 List<Task> tasks = new List<Task>();
                 for (int j = i; j < i + 15; j++)
                 {
-                    if (j >= dgvVideo.Rows.Count) { break; }
-                    Video selected = (Video)(dgvVideo.Rows[j].DataBoundItem);
-                    await Task.Delay(new TimeSpan(2000));
-                    var task = DownloadVideo(selected, downloadFolder);
-                    tasks.Add(task);
-                    totalTasks.Add(task);
+                    try
+                    {
+                        if (j >= dgvVideo.Rows.Count) { break; }
+                        Video selected = (Video)(dgvVideo.Rows[j].DataBoundItem);
+                        await Task.Delay(new TimeSpan(2000));
+                        var task = DownloadVideo(selected, downloadFolder);
+                        tasks.Add(task);
+                        totalTasks.Add(task);
+                    }
+                    catch { }
                 }
                 await Task.WhenAll(tasks);
             }

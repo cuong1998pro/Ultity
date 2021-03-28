@@ -61,7 +61,7 @@ namespace KetNoiSql.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Source=.\sqlexpress;Initial Catalog=AdventureWorks2012;Integrated Security=True.
+        ///   Looks up a localized string similar to Data Source=.\sqlexpress;Initial Catalog=HocSinh;Integrated Security=True.
         /// </summary>
         internal static string connectionString {
             get {
